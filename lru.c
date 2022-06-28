@@ -18,24 +18,23 @@ int indexes[4] = {0};
  */
 void LRU(int page, int working_set[], int indexes[]) {
 
-    int oldest;
+    int oldest;                                         //indice da pagina referenciada a mais tempo
 
     for(int i = 0; i < 4; i++) {
 
-        if(working_set[i] == 0) {               //existe frame vazio no working set
+        if(working_set[i] == page) {                    //pagina ja esta presente no working set
 
-            working_set[i] = page;              //primeiro frame vazio recebe a pagina
+            /* atualizar indice */
+            return;
+
+        } else if(working_set[i] == 0) {               //nova pagina && existe frame vazio no working set
+
+            working_set[i] = page;                      //primeiro frame vazio recebe a pagina
             /* salvar indice */
             /* incrementar page fault */
             return;
 
-        } else if(working_set[i] == page) {     //pagina ja esta presente no working set
-
-            /* salvar indice */
-            return;
-
-        }                              
-
+        }                           
 
     }
 
