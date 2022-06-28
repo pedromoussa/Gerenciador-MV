@@ -27,23 +27,23 @@ void LRU(int page, int working_set[], int indexes[]) {
             working_set[i] = page;              //primeiro frame vazio recebe a pagina
             /* salvar indice */
             /* incrementar page fault */
-            break;
+            return;
 
         } else if(working_set[i] == page) {     //pagina ja esta presente no working set
 
             /* salvar indice */
-            break;
+            return;
 
-        } else {                                //pagina nao esta presente e nao ha espaco vazio no working set
+        }                              
 
-            oldest = indexes[3];                //oldest = indice da pagina mais antiga
-            working_set[oldest] = page;         //frame da pagina mais antiga recebe nova pagina
-            /* salvar indice */
-            /* incrementar page fault */
-
-        }
 
     }
+
+    /* pagina nao esta presente e nao ha espaco vazio no working set: */
+    oldest = indexes[3];
+    working_set[oldest] = page;
+    /* salvar indice */
+    /* incrementar page fault */
 
 }
 
