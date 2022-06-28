@@ -75,8 +75,13 @@ void LRU(int page, int working_set[], int indexes[]) {
 
     /* pagina nao esta presente e nao ha espaco vazio no working set: */
     oldest = indexes[0];
-    working_set[oldest] = page;
     indexes[0] = page;
+
+    /* substitui pagina referenciada a mais tempo pela nova pagina */
+    for(int i = 0; i < 4; i++)  
+        if(working_set[i] == oldest)
+            working_set[i] = page;
+
     l_shift(&indexes, page);
     /* incrementar page fault */
 
