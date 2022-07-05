@@ -3,10 +3,10 @@
 #include <time.h>
 #include <limits.h>
 
-#define NUM_MAX_PROCESSES 20
-#define NUM_MAX_PAGES 50
+#define NUM_MAX_PROCESSES 3
+#define NUM_MAX_PAGES 10
 #define NUM_MAX_FRAMES 64
-#define NUM_MAX_REQUESTS 20
+#define NUM_MAX_REQUESTS 7
 
 #define WORKING_SET_LIMIT 4
 
@@ -117,7 +117,7 @@ void print_process(process* p);
 void insert_page(page_list* pl, int page_id, int process_id);
 void remove_page(page_list* pl, int page_id);
 
-void l_shift(page* working_set, int id);
+void l_shift(page *working_set, int id);
 void LRU(process* p, int id);
 
 /***************************** FUNCTIONS ********************************/
@@ -125,7 +125,6 @@ void LRU(process* p, int id);
 /**************************** CREATION FUNCS *******************************/
 
 process* new_process(int id) {
-
 	printf(BLUE "---new_process---\n" RESET);
 
 	process* p = (process *) malloc(sizeof(process));
@@ -177,10 +176,14 @@ frame* new_frame(int frame_id) {
 	return f;
 }
 
+
+
+
+
 /**************************** INITIALIZATION FUNCS *******************************/
 
 void create_frames() {
-	printf(BLUE "---create_frames---\n" RESET);
+	//printf(BLUE "---create_frames---\n" RESET);
 	
 	frame* f = new_frame(new_frame_ID);
 	new_frame_ID++;
@@ -197,7 +200,7 @@ void create_frames() {
 	
 	MEMORY.size++;
 	
-	printf(BLUE "---ENDcreate_frames---\n" RESET);
+	//printf(BLUE "---ENDcreate_frames---\n" RESET);
 }
 
 void create_process() {
@@ -226,23 +229,29 @@ void initiate_process_pages(process* p) {
 		insert_page(&p->page_list, i+1, p->pcb.process_id);
 }
 
+
+
+
+
 /**************************** FRAME FUNCS *******************************/
 
 //pega a primeira frame disponivel
-
 frame* get_available_frame(frame_list* fl) {
-  	frame* f = fl->first;
-  	if(f != NULL) {
-    	while(f->next != NULL) {
-      		f = f->next;
-    	}	
-  	}
-  	return f;
+	frame* f = fl->first;
+	if(f != NULL) {
+		while(f->next != NULL) {
+			f = f->next;
+		}
+	}
+
+	return f;
 }
 
 void insert_page_into_frame(page* p, frame* f) {
 	f->page = p;
 }
+
+
 
 /**************************** PAGE & PAGELIST FUNCS *******************************/
 
@@ -309,6 +318,8 @@ page* get_page_from_page_list(page_list* pl, int page_id) {
 		return p;
 }
 
+
+
 /**************************** PRINT FUNCS *******************************/
 
 void print_infos() {
@@ -321,13 +332,13 @@ void print_infos() {
 		print_process(p);
 		p = p->next;
 	}
-	
+	/*
 	puts("Virtual Memory:");
 	while(f != NULL) {
 		printf("f_id: %d ", f->frame_id);
 		f = f->next;
 	}
-	
+	*/
 	printf(BLUE "---ENDprint_infos---\n" RESET);
 }
 
@@ -357,61 +368,155 @@ void print_process(process* p) {
 	printf(BLUE "---print_process---\n" RESET);
 
 	printf("p->pcb.process_id: %d\n", p->pcb.process_id);
-	printf("p->pcb.t_created: %d\n", p->pcb.t_created);
-	printf("p->num_total_requests: %d\n", p->num_total_requests);
+	//printf("p->pcb.t_created: %d\n", p->pcb.t_created);
+	//printf("p->num_total_requests: %d\n", p->num_total_requests);
 	printf("p->num_requests_done: %d\n", p->num_requests_done);
 	//print_page_list(p->working_set);
 	for(int i = 0; i < WORKING_SET_LIMIT; i++)
 		printf("working_set[%d]: %d ", i, p->working_set[i].page_id);
-	print_page_list(p->page_list);
-	if(p->next != NULL)
-		printf("p->next->pcb.process_id: %d\n", p->next->pcb.process_id);
-	if(p->previous != NULL)
-		printf("p->previous->pcb.process_id: %d\n", p->previous->pcb.process_id);
+	//print_page_list(p->page_list);
+	//if(p->next != NULL)
+	//	printf("p->next->pcb.process_id: %d\n", p->next->pcb.process_id);
+	//if(p->previous != NULL)
+	//	printf("p->previous->pcb.process_id: %d\n", p->previous->pcb.process_id);
 
 	printf(BLUE "---ENDprint_process---\n" RESET);
 }
 
+
+
+
+
+
+
+
+
+
 /**************************** PROCESS FUNCS *******************************/
 
+//PSEUDOCODIGO
+//se a pag esta no working set
+//	atualiza
+//else
+//	se o working set esta cheio
+//		remover a pag com o menor t_last_access
+//		inserir a pag requisitada
+//	else
+//		inserir a pag requisitada
+//		se alguma frame esta disponivel
+//			inserir a pag em uma frame
+//		else
+//			remover processo mais com paginas requisitadas a mais tempo
+//			inserir a pag em uma frame
+/*
 void request_page(process* p) {
 	printf(BLUE "---request_page---\n" RESET);
 	
 	int random_page_id = random()%50 + 1;
+	
+	page* found_page = get_page(p->working_set, random_page_id);
+	if(found_page != NULL) {
+		l_shift(p->working_set, found_page->page_id);
+	}
+	else {
+		page* pg = get_page_from_page_list(&p->page_list, random_page_id);
+		if(p->working_set_size == WORKING_SET_LIMIT) {
+			p->working_set[0] = *pg;
+		}
+		else {
+			LRU(p, random_page_id);
+			if(available_frames > 0) {
+				frame* f = get_available_frame(&MEMORY);
+				f->page = pg;
+			}
+			else {
+				process* p = PROCESS_LIST.first;
+				PROCESS_LIST.first->next->previous = NULL;
+				PROCESS_LIST.first = PROCESS_LIST.first->next;
+				free(p);
+				
+				//	inserir a pag em uma frame
+			}
+			
+		}
+	}
+	
+	printf(BLUE "---ENDrequest_page---\n" RESET);
+}
+*/
+
+void request_page(process* p) {
+	printf(BLUE "---request_page---\n" RESET);
+	
+	int random_page_id = random()%NUM_MAX_PAGES + 1;
 	page* found_page = get_page(p->working_set, random_page_id);
 
+	//puts("a");
+	printf("Processo #%d faz requisicao da Pag #%d\n", p->pcb.process_id ,random_page_id);
+
    	if(found_page != NULL) {
+   		//puts("b");
      	l_shift(p->working_set, found_page->page_id);
+     	//puts("c");
    	}
    	else {
+   		//puts("d");
      	page* pg = get_page_from_page_list(&p->page_list, random_page_id);
+     	//puts("e");
      	
      	if(p->working_set_size == WORKING_SET_LIMIT) {
+     		//puts("f");
         	p->working_set[0] = *pg;
+        	//puts("g");
      	}
      	else {
+     		//puts("h");
         	LRU(p, random_page_id);
+        	//puts("i");
         	
         	if(available_frames > 0) {
+        		//puts("j");
           		frame* f = get_available_frame(&MEMORY);
-          		f->page = pg;
+          		//if(f == NULL)
+          		//	puts("f NULO");
+          		//puts("k");
+          		if(pg != NULL) {
+          			f->page = pg;
+          		}
+          		//else
+          		//	puts("ELSE///////////////////////");
+          		//puts("l");
         	}
         	else {
+        		//puts("m");
                 process* p = PROCESS_LIST.first;
+                //puts("n");
                 frame* fr = MEMORY.first;
+                //puts("o");
                 
                 while(fr != NULL) {
+                	//puts("p");
                     if(fr->page->parent_process_id == p->pcb.process_id)
                         free(fr->page);
+                    //puts("q");
                     fr = fr->next;
+                    //puts("r");
                 }
+                //puts("s");
                 PROCESS_LIST.first->next->previous = NULL;
+                //puts("t");
                 PROCESS_LIST.first = PROCESS_LIST.first->next;
+                //puts("u");
 
         }
      }
    }
+   p->num_requests_done++;
+   printf("p->num_requests_done: %d\n", p->num_requests_done);
 }
+
+
+
 
 /***************************** UTILITY FUNCTIONS ********************************/
 
@@ -431,6 +536,8 @@ void update_flags() {
 	
 	printf("---ENDupdate_flags---\n");
 }
+
+
 
 /***************************** LRU FUNCTIONS ********************************/
 
@@ -462,31 +569,73 @@ void l_shift(page *working_set, int id) {
  * se houver espaço, adiciona a pagina ao fim do working set
  * caso contrario, remove a pagina utilizada a mais tempo (least recently used)
  */
-void LRU(process* p, int id) {
+/*
+void LRU(process* p) {
 
-    page* pg = get_page_from_page_list(&p->page_list, id);
+    int page_id = p->page_list.first->page_id;
 
     for(int i = 0; i < 4; i++) {
 
-        if(p->working_set[i].page_id == pg->page_id) {                 //pagina ja esta presente no working set
+        if(p->working_set[i].page_id == page_id) {                 //pagina ja esta presente no working set
 
-            l_shift(p->working_set, pg->page_id);                      //atualiza working set
+            l_shift(p->working_set, page_id);                      //atualiza working set
             return;
 
-        } else if(p->working_set[i].page_id == 0) {                    //nova pagina && existe frame vazio no working set
+        } else if(p->working_set[i].page_id == 0) {                //nova pagina && existe frame vazio no working set
 
-            p->working_set[i].page_id = pg->page_id;                   //primeiro frame vazio recebe a pagina
+            p->working_set[i].page_id = page_id;                   //primeiro frame vazio recebe a pagina
             return;
 
-        }     
+        }                           
 
     }
 
+    p->working_set[0].page_id = page_id;
+    l_shift(p->working_set, page_id);
+
+
+
+}
+*/
+
+void LRU(process* p, int id) {
+    page* pg = get_page_from_page_list(&p->page_list, id);
+
+    for(int i = 0; i < 4; i++) {
+        if(p->working_set[i].page_id == pg->page_id) {                 //pagina ja esta presente no working set
+            l_shift(p->working_set, pg->page_id);                      //atualiza working set
+            return;
+        } else if(p->working_set[i].page_id == 0) {                    //nova pagina && existe frame vazio no working set
+            p->working_set[i].page_id = pg->page_id;                   //primeiro frame vazio recebe a pagina
+            return;
+        }     
+    }
     /* pagina nao esta presente e nao ha espaco vazio no working set: */
     p->working_set[0].page_id = pg->page_id;
     l_shift(p->working_set, pg->page_id);
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* NEW / UNTESTED FUNCS */
 
@@ -521,6 +670,8 @@ void copy_page_to_working_set(process* pr, page* pg) {
 //se o working set estiver cheio, nao eh preciso que uma frame esteja disponivel (utilizara a frame da pag que sera removida)
 //se o working set nao estiver cheio, eh preciso checar se existe uma fram disponivel
 
+
+
 //PROCEDURE OF INSERTION INTO WORKING SET
 //	if !is_working_set_full:
 //		copy_page_to_working_set			//UMA PAGINA EH CRIADA NO WORKING SET, OU UM PONTEIRO APONTA PARA A PAG NA PAGE_LIST?
@@ -528,6 +679,8 @@ void copy_page_to_working_set(process* pr, page* pg) {
 //	else
 //		remove oldest page from working set
 //		update_frame
+
+
 
 //INSERTION INTO FRAME
 //se existe alguma frame disponivel
@@ -539,6 +692,13 @@ void copy_page_to_working_set(process* pr, page* pg) {
 //CODE:
 //if frames_available > 0:
 //	pass
+
+
+
+
+
+
+
 
 //PROCESSO DE REMOCAO DO PROCESSO MAIS ANTIGO:
 //	mais antigo = INT_MAX
@@ -553,11 +713,17 @@ void copy_page_to_working_set(process* pr, page* pg) {
 //		f = f->next
 //	free_frame(frame mais antigo)
 
+
+
 //COMO FUNCIONA O PROCESSO ESTAR OU NAO NA MEMORIA VIRTUAL?
 //	uma frame eh ocupada por uma pagina que contem o id do processo pai
 
+
+
 //COMO IMPLEMENTAR A PAGETABLE?
 //um array de duas dimensoes pagetable[50][2], onde o primeiro campo indica se a pag esta na memoria e a segunda indica o numero da frame (se pag esta na memoria)
+
+
 
 //COMO IMPLEMENTAR UMA LRU QUEUE PARA PROCESSOS?
 //a fila de processos comeca vazia
@@ -583,8 +749,8 @@ int main(int argc, char* argv[]) {
 		create_frames();
 	
 	//while(processes_done_counter < NUM_MAX_PROCESSES) {
-	while(PROCESS_LIST.size < 3) { // PARA TESTES
-		printf("===========INSTANTE DE TEMPO: %d===========\n", instante_tempo_global);
+	while(/*PROCESS_LIST.size < 3*//*instante_tempo_global < 18*/1) { // PARA TESTES
+		printf("\n\n===========INSTANTE DE TEMPO: %d===========\n", instante_tempo_global);
 		update_flags();
 		
 		if(time_to_create_process && PROCESS_LIST.size < NUM_MAX_PROCESSES) {
@@ -606,8 +772,34 @@ int main(int argc, char* argv[]) {
 		print_infos();
 		
 		instante_tempo_global++;
+		
+		process* check;
+		check = PROCESS_LIST.first;
+		while(check != NULL) {
+			//printf("MAIN P#: %d NUM REQUESTS DONE: %d\n", check->pcb.process_id, check->num_requests_done);
+			if(check->num_requests_done == NUM_MAX_REQUESTS) {
+				processes_done_counter++;
+				PROCESS_LIST.first = PROCESS_LIST.first->next;
+			}
+			//else
+			//	printf("check->num_requests_done: %d NUM_MAX_REQUESTS: %d\n", check->num_requests_done, NUM_MAX_REQUESTS);
+			check = check->next;
+		}
+		if(processes_done_counter == NUM_MAX_PROCESSES)
+			break;
+		//processes_done_counter = 0;
 	}
 
     return 0;
-
 }
+
+/*
+TODO:
+	-swap
+	-trace
+	-tabela de paginas
+	-exemplo simples do programa
+	-relatorio
+	-buscar referencias
+
+*/
