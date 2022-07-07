@@ -521,7 +521,10 @@ int main(int argc, char* argv[]) {
 		create_frames();
 	
 	while(1) {
-		fprintf(trace, "\n\n================= CURRENT TIME UNIT: %d ============== \n", instante_tempo_global);
+
+		if(instante_tempo_global % 3 == 0)
+			fprintf(trace, "\n\n================= CURRENT TIME UNIT: %d ============== \n", instante_tempo_global);
+
 		update_flags();
 		
 		if(time_to_create_process && PROCESS_LIST.size < NUM_MAX_PROCESSES) {
@@ -535,9 +538,8 @@ int main(int argc, char* argv[]) {
 				request_page(p);
 				p = p->next;
 			}
+			print_infos();
 		}
-		
-		print_infos();
 		
 		instante_tempo_global++;
 		
@@ -554,6 +556,7 @@ int main(int argc, char* argv[]) {
             puts(GREEN "Program terminated successfully" RESET);
 			break;
         }
+
 	}
 
     fclose(trace);
