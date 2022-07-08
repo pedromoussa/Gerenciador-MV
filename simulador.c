@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define NUM_MAX_PROCESSES 20
-#define NUM_MAX_PAGES 50
-#define NUM_MAX_FRAMES 64
-#define NUM_MAX_REQUESTS 20
+#define NUM_MAX_PROCESSES 4
+#define NUM_MAX_PAGES 8
+#define NUM_MAX_FRAMES 8
+#define NUM_MAX_REQUESTS 4
 
 #define WORKING_SET_LIMIT 4
 
@@ -17,19 +17,6 @@
 #define CYAN "\033[0;36m"
 #define PURPLE "\033[0;35m"
 #define RESET "\033[0m"
-
-/*
-
-PREMISSAS:
-Um processo termina apos realizar 20 requisicoes.
-A memoria eh representada pela lista de frames.
-
-As paginas sao armazenadas como doubly linked lists. Nos processos elas podem ser acessadas por meio de uma nova estrutura que possui 
-um ponteiro para a primeira pagina, a ultima, e o numero de paginas naquela linked list.
-
-Os frames e processos tambem sao armazenados como doubly linked lists. Eles devem ser acessados por variaveis globais, 
-ISSO DEIXA PRO RELATORIO
-*/
 
 /***************************** STRUCTURES ********************************/
 
@@ -759,30 +746,34 @@ int main(int argc, char* argv[]) {
 	while(MEMORY.size < NUM_MAX_FRAMES)
 		create_frames();
 
-	while(processes_done_counter < NUM_MAX_PROCESSES) {
+	while(processes_done_counter < NUM_MAX_PROCESSES) {	
 		update_flags();
 		
 		if(time_to_request_page) { 
 			printf("\n\n===========INSTANTE DE TEMPO: %d===========\n", instante_tempo_global);
 			fprintf(trace, "\n\n================= CURRENT TIME UNIT: %d ============== \n", instante_tempo_global);
 		}
+
 		if(time_to_create_process && created_processes < NUM_MAX_PROCESSES)
 			create_process();
 		
 		if(time_to_request_page) {
+
 			p = PROCESS_LIST.first;
 			while(p != NULL) {
 				request_page(p);
-				fprintf(trace, "Pagetable:\n"); 
+				fprintf(trace, "Pagetable\n"); 
 				for(int i = 0; i < NUM_MAX_PAGES; i++) {
 					if(p->pagetable[i][0] == 1) 
-						fprintf(trace, "Process #%d : Page #%d in Frame #%d\n", p->pcb.process_id, i+1, p->pagetable[i][1]);
-				}
+						fprintf(trace, "Frame #%d: Page #%d\n", p->pagetable[i][1], i+1);
+				}	
 				fprintf(trace, "-----------------------------------------\n");
 				p = p->next;
+
 			}
 			
 			p = SWAP_MEMORY.first;
+
 			while(p != NULL) {
 				process* aux = p->next;
 				if(!p->has_just_requested_page) {
@@ -800,13 +791,10 @@ int main(int argc, char* argv[]) {
 		if(any_process_done) {
 			terminate_done_processes();
 		}
+
 	}
 
 	fclose(trace);
 
     return 0;
 }
-
-//LER CADA FUNCAO COM ATENCAO E VER SE NAO TEM NENHUM CASO QUE NAO SEJA COBERTO POR ELAS
-//POR FUNCTION CALLS DE TODAS AS FUNCS
-//FAZER TESTES COM DIFERENTES PARAMETROS

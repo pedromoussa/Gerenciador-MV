@@ -1,0 +1,223 @@
+
+
+================= CURRENT TIME UNIT: 0 ============== 
+Process #1 makes Page #4 request
+Pagetable
+Frame #1: Page #4
+-----------------------------------------
+Processes:
+Process ID: 1
+Requests Done: 1
+Working Set: 4 | 0 | 0 | 0 | 
+-----------------------------------------
+Virtual Memory:
+[1]: 4(1)  
+-----------------------------------------
+SWAP:
+
+-----------------------------------------
+
+
+================= CURRENT TIME UNIT: 3 ============== 
+Process #1 makes Page #5 request
+Pagetable
+Frame #1: Page #4
+Frame #2: Page #5
+-----------------------------------------
+Process #2 makes Page #2 request
+Pagetable
+Frame #3: Page #2
+-----------------------------------------
+Processes:
+Process ID: 1
+Requests Done: 2
+Working Set: 4 | 5 | 0 | 0 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 1
+Working Set: 2 | 0 | 0 | 0 | 
+-----------------------------------------
+Virtual Memory:
+[1]: 4(1)  [2]: 5(1)  [3]: 2(2)  
+-----------------------------------------
+SWAP:
+
+-----------------------------------------
+
+
+================= CURRENT TIME UNIT: 6 ============== 
+Process #1 makes Page #7 request
+Pagetable
+Frame #1: Page #4
+Frame #2: Page #5
+Frame #4: Page #7
+-----------------------------------------
+Process #2 makes Page #5 request
+Pagetable
+Frame #3: Page #2
+Frame #5: Page #5
+-----------------------------------------
+Process #3 makes Page #7 request
+Pagetable
+Frame #6: Page #7
+-----------------------------------------
+Processes:
+Process ID: 1
+Requests Done: 3
+Working Set: 4 | 5 | 7 | 0 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 2
+Working Set: 2 | 5 | 0 | 0 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 1
+Working Set: 7 | 0 | 0 | 0 | 
+-----------------------------------------
+Virtual Memory:
+[1]: 4(1)  [2]: 5(1)  [3]: 2(2)  [4]: 7(1)  [5]: 5(2)  [6]: 7(3)  
+-----------------------------------------
+SWAP:
+
+-----------------------------------------
+
+
+================= CURRENT TIME UNIT: 9 ============== 
+Process #1 makes Page #7 request
+Pagetable
+Frame #1: Page #4
+Frame #2: Page #5
+Frame #4: Page #7
+-----------------------------------------
+Process #2 makes Page #4 request
+Pagetable
+Frame #3: Page #2
+Frame #7: Page #4
+Frame #5: Page #5
+-----------------------------------------
+Process #3 makes Page #5 request
+Pagetable
+Frame #8: Page #5
+Frame #6: Page #7
+-----------------------------------------
+Process #4 makes Page #7 request
+All frames are occupied
+Process making request: 4
+Process #1 was selected to be swaped out
+Frame #1 foi disponibilizada.
+Frame #2 foi disponibilizada.
+Frame #4 foi disponibilizada.
+Pagetable
+-----------------------------------------
+Processes:
+Process ID: 2
+Requests Done: 3
+Working Set: 2 | 5 | 4 | 0 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 2
+Working Set: 7 | 5 | 0 | 0 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 1
+Working Set: 7 | 0 | 0 | 0 | 
+-----------------------------------------
+Virtual Memory:
+[1]: 7(4)  [3]: 2(2)  [5]: 5(2)  [6]: 7(3)  [7]: 4(2)  [8]: 5(3)  
+-----------------------------------------
+SWAP:
+Process ID: 1
+Requests Done: 4
+Working Set: 0 | 0 | 0 | 0 | 
+-----------------------------------------
+
+-----------------------------------------
+Process #1 has been terminated
+
+
+================= CURRENT TIME UNIT: 12 ============== 
+Process #2 makes Page #8 request
+Pagetable
+Frame #3: Page #2
+Frame #7: Page #4
+Frame #5: Page #5
+Frame #2: Page #8
+-----------------------------------------
+Process #3 makes Page #7 request
+Pagetable
+Frame #8: Page #5
+Frame #6: Page #7
+-----------------------------------------
+Process #4 makes Page #5 request
+Pagetable
+Frame #4: Page #5
+-----------------------------------------
+Processes:
+Process ID: 2
+Requests Done: 4
+Working Set: 2 | 5 | 4 | 8 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 3
+Working Set: 5 | 7 | 0 | 0 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 2
+Working Set: 7 | 5 | 0 | 0 | 
+-----------------------------------------
+Virtual Memory:
+[1]: 7(4)  [2]: 8(2)  [3]: 2(2)  [4]: 5(4)  [5]: 5(2)  [6]: 7(3)  [7]: 4(2)  [8]: 5(3)  
+-----------------------------------------
+SWAP:
+
+-----------------------------------------
+Process #2 has been terminated
+
+
+================= CURRENT TIME UNIT: 15 ============== 
+Process #3 makes Page #7 request
+Pagetable
+Frame #8: Page #5
+Frame #6: Page #7
+-----------------------------------------
+Process #4 makes Page #6 request
+Pagetable
+Frame #4: Page #5
+Frame #2: Page #6
+-----------------------------------------
+Processes:
+Process ID: 3
+Requests Done: 4
+Working Set: 5 | 7 | 0 | 0 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 3
+Working Set: 7 | 5 | 6 | 0 | 
+-----------------------------------------
+Virtual Memory:
+[1]: 7(4)  [2]: 6(4)  [4]: 5(4)  [6]: 7(3)  [8]: 5(3)  
+-----------------------------------------
+SWAP:
+
+-----------------------------------------
+Process #3 has been terminated
+
+
+================= CURRENT TIME UNIT: 18 ============== 
+Process #4 makes Page #6 request
+Pagetable
+Frame #4: Page #5
+Frame #2: Page #6
+-----------------------------------------
+Processes:
+Process ID: 4
+Requests Done: 4
+Working Set: 7 | 5 | 6 | 0 | 
+-----------------------------------------
+Virtual Memory:
+[1]: 7(4)  [2]: 6(4)  [4]: 5(4)  
+-----------------------------------------
+SWAP:
+
+-----------------------------------------
+Process #4 has been terminated
