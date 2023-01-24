@@ -2,21 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define NUM_MAX_PROCESSES 4
-#define NUM_MAX_PAGES 8
-#define NUM_MAX_FRAMES 8
-#define NUM_MAX_REQUESTS 4
+#define NUM_MAX_PROCESSES 20
+#define NUM_MAX_PAGES 50
+#define NUM_MAX_FRAMES 64
+#define NUM_MAX_REQUESTS 20
 
 #define WORKING_SET_LIMIT 4
-
-//CORES
-#define RED "\033[1;31m"
-#define GREEN "\033[0;32m"
-#define BLUE "\033[0;34m"
-#define YELLOW "\033[1;33m"
-#define CYAN "\033[0;36m"
-#define PURPLE "\033[0;35m"
-#define RESET "\033[0m"
 
 /***************************** STRUCTURES ********************************/
 
@@ -116,17 +107,16 @@ process* get_different_process(process* p, process_list* pl);
 void reset_working_set(process* p);
 void reset_process_flags();
 int is_working_set_full(process* p);
-
-void update_flags();
+void swap_out(int process_id);
+void swap_in(int process_id);
 
 void l_shift(page *working_set, int id);
 void LRU(process* p, int id);
 
-void swap_out(int process_id);
-void swap_in(int process_id);
-
 void print_infos();
 void print_process(process* p);
+void print_pagetable(process* p);
+void update_flags();
 
 /**************************** CREATION FUNCTIONS *******************************/
 
@@ -211,8 +201,10 @@ void create_frames() {
 void create_process() {
 	process* p = new_process(new_process_ID);
 	new_process_ID++;
-	insert_process(&PROCESS_LIST, p);
+	insert_process(&SWAP_MEMORY, p);
 	created_processes++;
+	
+	fprintf(trace, "Processo #%d foi criado\n\n", p->pcb.process_id);
 }
 
 /*
@@ -301,7 +293,6 @@ void release_process_frames(process* p) {
 			frame* f = get_frame_by_process_and_page(&MEMORY, p->working_set[i].page_id, p->pcb.process_id);
 			if(f != NULL) {
 				release_frame(f);
-				fprintf(trace, "Frame #%d foi disponibilizada.\n", f->frame_id);
 			}
 		}
 	}
@@ -351,61 +342,7 @@ page* get_page_from_page_list(page_list* pl, int page_id) {
 	return p;
 }
 
-/**************************** PRINT FUNCTIONS *******************************/
 
-void print_infos() {
-	printf(BLUE "\n---print_infos---\n" RESET);
-	process* p = PROCESS_LIST.first;
-	frame* f = MEMORY.first;
-	process* s = SWAP_MEMORY.first;
-	
-	printf(CYAN"Processes:\n"RESET);
-	fprintf(trace, "Processes:\n");
-	while(p != NULL) {
-		print_process(p);
-		p = p->next;
-	}
-	
-	printf(CYAN"Virtual Memory:\n"RESET);
-	fprintf(trace, "Virtual Memory:\n");
-	while(f != NULL) {
-		if(f->page != NULL) {
-			printf(GREEN "[%d]: %d(%d)  " RESET, f->frame_id, f->page->page_id, f->page->parent_process_id);
-			fprintf(trace, "[%d]: %d(%d)  ", f->frame_id, f->page->page_id, f->page->parent_process_id);
-		}
-		f = f->next;
-	}
-	fprintf(trace, "\n-----------------------------------------\n");
-	puts("");
-	printf(CYAN"SWAP:\n"RESET);
-	fprintf(trace, "SWAP:\n");
-	while(s != NULL) {
-		print_process(s);
-		s = s->next;
-	}
-	fprintf(trace, "\n-----------------------------------------\n");
-	printf(BLUE "---ENDprint_infos---\n" RESET);
-}
-
-void print_process(process* p) {
-	printf(BLUE "---print_process---\n" RESET);
-
-	printf("p->pcb.process_id: %d\n", p->pcb.process_id);
-	printf("p->num_requests_done: %d\n", p->num_requests_done);
-	printf("working set: ");
-	fprintf(trace, "Process ID: %d\n", p->pcb.process_id);
-	fprintf(trace, "Requests Done: %d\n", p->num_requests_done);
-    fprintf(trace, "Working Set: ");
-	for(int i = 0; i < WORKING_SET_LIMIT; i++) { 
-		printf("[%d]: %d  ", i, p->working_set[i].page_id);
-		fprintf(trace, "%d | ", p->working_set[i].page_id);
-	}
-	fprintf(trace, "\n-----------------------------------------\n");
-
-	puts("");
-
-	printf(BLUE "---ENDprint_process---\n" RESET);
-}
 
 /**************************** PROCESS FUNCTIONS *******************************/
 
@@ -427,21 +364,17 @@ void request_page(process* p) {
 	int random_page_id = random()%NUM_MAX_PAGES + 1;
 	page* pg = get_page_from_page_list(&p->page_list, random_page_id);
 	
-	printf(YELLOW "Processo #%d faz requisicao da pagina #%d.\n" RESET, p->pcb.process_id, random_page_id);
-	fprintf(trace, "Process #%d makes Page #%d request\n", p->pcb.process_id ,random_page_id);
+	fprintf(trace, "Processo #%d faz requisicao da pagina #%d.\n", p->pcb.process_id ,random_page_id);
 	
 	if(is_page_in_working_set(p->working_set, random_page_id)) {
-		printf(YELLOW "Pagina #%d ja esta presente no working set do processo #%d\n" RESET, random_page_id, p->pcb.process_id);
-		//fprintf(trace, "Pagina #%d ja esta presente no working set do processo #%d\n", random_page_id, p->pcb.process_id);
 		l_shift(p->working_set, random_page_id);
 	}
 	else {
 		if(is_working_set_full(p)) {
 			int oldest_page_id = p->working_set[0].page_id;
-			frame* f = get_frame_by_process_and_page(&MEMORY, oldest_page_id, p->pcb.process_id);			// these 3 lines substitute the page in the frame
+			frame* f = get_frame_by_process_and_page(&MEMORY, oldest_page_id, p->pcb.process_id);
 			p->pagetable[oldest_page_id-1][0] = 0;
 			if(f != NULL) {
-				printf(YELLOW "Frame #%d, ocupada pela pagina #%d, agora esta ocupada pela pagina #%d\n" RESET, f->frame_id, oldest_page_id, pg->page_id);
 				f->page = pg;
 				p->pagetable[pg->page_id-1][0] = 1;
 				p->pagetable[pg->page_id-1][1] = f->frame_id;
@@ -455,24 +388,25 @@ void request_page(process* p) {
 				f->page = pg;
 				p->pagetable[pg->page_id-1][0] = 1;
 				p->pagetable[pg->page_id-1][1] = f->frame_id;
-				printf(YELLOW "Frame #%d foi alocada a pagina #%d\n" RESET, f->frame_id, pg->page_id);
 			}
 			else {
 				
-				printf(YELLOW "Todas as frames estao ocupadas\n" RESET);
-				fprintf(trace, "All frames are occupied\n");
+				fprintf(trace, "Todas as frames estao ocupadas.\n");
+				
 				process* pr = get_different_process(p, &PROCESS_LIST);
-				printf(YELLOW "Processo #%d foi escolhido para ser swaped out\n" RESET, pr->pcb.process_id);
-				fprintf(trace, "Process #%d was selected to be swaped out\n", pr->pcb.process_id);				
+				
+				fprintf(trace, "Processo #%d foi escolhido para ser enviado a memoria swap.\n", pr->pcb.process_id);	
+				
 				for(int i = 0; i < NUM_MAX_PAGES; i++)
 					for(int j = 0; j < 2; j++)
 						pr->pagetable[i][j] = 0;
-
+				
 				release_process_frames(pr);
 				
 				frame* f = get_first_available_frame(&MEMORY);
 				f->page = pg;
-				printf(YELLOW "Frame #%d foi alocada a pagina #%d\n" RESET, f->frame_id, pg->page_id);
+				p->pagetable[pg->page_id-1][0] = 1;
+				p->pagetable[pg->page_id-1][1] = f->frame_id;
 				
 				swap_out(pr->pcb.process_id);
 			}
@@ -544,19 +478,12 @@ process* remove_process(process_list* pl, int process_id) {
  * Remove o processo da lista de processos onde estiver.
  */
 void terminate_process(process* p, process_list* pl) {
-	for(int i = 0; i < WORKING_SET_LIMIT; i++) {
-		if(p->working_set[i].page_id != 0) {
-			frame* f = get_frame_by_process_and_page(&MEMORY, p->working_set[i].page_id, p->pcb.process_id);
-			if(f != NULL)
-				release_frame(f);
-		}
-	}
-	
+
+	release_process_frames(p);
 	remove_process(pl, p->pcb.process_id);
-	
 	processes_done_counter++;
-	printf(RED"Processo #%d foi terminado, agora processes_done_counter: %d\n"RESET, p->pcb.process_id, processes_done_counter);
-	fprintf(trace, "Process #%d has been terminated\n", p->pcb.process_id);
+	
+	fprintf(trace, "\nProcesso #%d foi terminado\n", p->pcb.process_id);
 }
 
 /*
@@ -598,9 +525,6 @@ void terminate_done_processes() {
 process* get_different_process(process* p, process_list* pl) {
 	process* aux = pl->first;
 	
-	printf("Processo fazendo requisicao: %d\n", p->pcb.process_id);
-	fprintf(trace, "Process making request: %d\n", p->pcb.process_id);
-
 	while(aux != NULL && aux->pcb.process_id == p->pcb.process_id)
 		aux = aux->next;
 
@@ -643,18 +567,29 @@ int is_working_set_full(process* p) {
 	return 0;
 }
 
-/***************************** UTILITY FUNCTIONS ********************************/
+/*
+ * Retira o processo carregado na memoria para a memoria swap. Retira as paginas
+ * de seu working set.
+ */
+void swap_out(int process_id) {
+	process* p = remove_process(&PROCESS_LIST, process_id);
+		
+	p->previous = NULL;
+	p->next = NULL;
+	reset_working_set(p);
+	insert_process(&SWAP_MEMORY, p);
+}
 
-void update_flags() {
-	if(instante_tempo_global % 3 == 0) {
-		time_to_create_process = 1;
-		time_to_request_page = 1;
-	}
-	else {
-		time_to_create_process = 0;
-		time_to_request_page = 0;
-	}
-	reset_process_flags();
+/*
+ * Carrega o processo da memoria swap para a memoria.
+ */
+void swap_in(int process_id) {
+	process* p = remove_process(&SWAP_MEMORY, process_id);
+	
+	fprintf(trace, "Processo #%d foi pego da memoria swap.\n", p->pcb.process_id);
+	p->previous = NULL;
+	p->next = NULL;
+	insert_process(&PROCESS_LIST, p);
 }
 
 /***************************** LRU FUNCTIONS ********************************/
@@ -698,39 +633,65 @@ void LRU(process* p, int id) {
     l_shift(p->working_set, pg->page_id);
 }
 
-/***************************** SWAP FUNCTIONS ********************************/
+/**************************** OTHER FUNCTIONS *******************************/
 
-/*
- * Retira o processo carregado na memoria para a memoria swap. Retira as paginas
- * de seu working set.
- */
-void swap_out(int process_id) {
-	printf(BLUE"---swap_out---\n"RESET);
+void print_infos() {
+	process* p = PROCESS_LIST.first;
+	frame* f = MEMORY.first;
+	process* s = SWAP_MEMORY.first;
 	
-	process* p = remove_process(&PROCESS_LIST, process_id);
-		
-	p->previous = NULL;
-	p->next = NULL;
-	reset_working_set(p);
-	insert_process(&SWAP_MEMORY, p);
+	fprintf(trace, "\nProcessos ocupando ao menos uma frame:\n");
+	while(p != NULL) {
+		print_process(p);
+		p = p->next;
+	}
 
-	printf(BLUE"---ENDswap_out---\n"RESET);
+	fprintf(trace, "Frames:\n");
+	while(f != NULL) {
+		if(f->page != NULL) {
+			fprintf(trace, "[F%d]: %d.%d  ", f->frame_id, f->page->parent_process_id, f->page->page_id);
+		}
+		f = f->next;
+	}
+	
+	fprintf(trace, "\n-----------------------------------------\n");
+	fprintf(trace, "Processos na memoria swap:\n");
+	while(s != NULL) {
+		print_process(s);
+		s = s->next;
+	}
 }
 
-/*
- * Carrega o processo da memoria swap para a memoria.
- */
-void swap_in(int process_id) {
-	printf(BLUE"---swap_in---\n"RESET);
+void print_process(process* p) {
+    fprintf(trace, "Process ID: %d\n", p->pcb.process_id);
+	fprintf(trace, "Requests Done: %d\n", p->num_requests_done);
+    fprintf(trace, "Working Set: ");
+	for(int i = 0; i < WORKING_SET_LIMIT; i++) {
+		fprintf(trace, "%d | ", p->working_set[i].page_id);
+	}
+	fprintf(trace, "\n-----------------------------------------\n");
+}
 
-	process* p = remove_process(&SWAP_MEMORY, process_id);
-	printf(RED"Processo #%d foi swaped in\n"RESET, p->pcb.process_id);
-	fprintf(trace, "Process #%d has been swaped in\n", p->pcb.process_id);
-	p->previous = NULL;
-	p->next = NULL;
-	insert_process(&PROCESS_LIST, p);
-	
-	printf(BLUE"---ENDswap_in---\n"RESET);
+void print_pagetable(process* p) {
+	fprintf(trace, "Pagetable do processo #%d\n", p->pcb.process_id); 
+	for(int i = 0; i < NUM_MAX_PAGES; i++) {
+		if(p->pagetable[i][0] == 1) {
+			fprintf(trace, "Frame #%d: Page #%d\n", p->pagetable[i][1], i+1);
+		}
+	}
+	fprintf(trace, "-----------------------------------------\n");
+}
+
+void update_flags() {
+	if(instante_tempo_global % 3 == 0) {
+		time_to_create_process = 1;
+		time_to_request_page = 1;
+	}
+	else {
+		time_to_create_process = 0;
+		time_to_request_page = 0;
+	}
+	reset_process_flags();
 }
 
 /***************************** MAIN ********************************/
@@ -746,55 +707,50 @@ int main(int argc, char* argv[]) {
 	while(MEMORY.size < NUM_MAX_FRAMES)
 		create_frames();
 
-	while(processes_done_counter < NUM_MAX_PROCESSES) {	
+	while(processes_done_counter < NUM_MAX_PROCESSES) {
 		update_flags();
-		
-		if(time_to_request_page) { 
-			printf("\n\n===========INSTANTE DE TEMPO: %d===========\n", instante_tempo_global);
-			fprintf(trace, "\n\n================= CURRENT TIME UNIT: %d ============== \n", instante_tempo_global);
+
+		if(time_to_request_page) {
+			fprintf(trace, "\n\n================= INSTANTE DE TEMPO: %d ============== \n", instante_tempo_global);
 		}
 
 		if(time_to_create_process && created_processes < NUM_MAX_PROCESSES)
 			create_process();
-		
+
 		if(time_to_request_page) {
 
 			p = PROCESS_LIST.first;
 			while(p != NULL) {
 				request_page(p);
-				fprintf(trace, "Pagetable\n"); 
-				for(int i = 0; i < NUM_MAX_PAGES; i++) {
-					if(p->pagetable[i][0] == 1) 
-						fprintf(trace, "Frame #%d: Page #%d\n", p->pagetable[i][1], i+1);
-				}	
-				fprintf(trace, "-----------------------------------------\n");
+				print_pagetable(p);
 				p = p->next;
-
 			}
-			
-			p = SWAP_MEMORY.first;
 
+			p = SWAP_MEMORY.first;
 			while(p != NULL) {
 				process* aux = p->next;
 				if(!p->has_just_requested_page) {
 					request_page(p);
 					swap_in(p->pcb.process_id);
+					print_pagetable(p);
 				}
 				p = aux;
 			}
-		
+
 			print_infos();
 		}
-		
+
 		instante_tempo_global++;
-		
+
 		if(any_process_done) {
 			terminate_done_processes();
 		}
-
 	}
 
+	puts("Programa terminou.");
+	puts("Trace se encontra no arquivo 'trace.txt'.");
 	fclose(trace);
 
     return 0;
 }
+
