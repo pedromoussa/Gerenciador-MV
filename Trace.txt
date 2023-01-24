@@ -1,223 +1,4716 @@
 
 
-================= CURRENT TIME UNIT: 0 ============== 
-Process #1 makes Page #4 request
-Pagetable
-Frame #1: Page #4
+================= INSTANTE DE TEMPO: 0 ============== 
+Processo #1 foi criado
+
+Processo #1 faz requisicao da pagina #44.
+Processo #1 foi pego da memoria swap.
+Pagetable do processo #1
+Frame #1: Page #44
 -----------------------------------------
-Processes:
+
+Processos ocupando ao menos uma frame:
 Process ID: 1
 Requests Done: 1
-Working Set: 4 | 0 | 0 | 0 | 
+Working Set: 44 | 0 | 0 | 0 | 
 -----------------------------------------
-Virtual Memory:
-[1]: 4(1)  
+Frames:
+[F1]: 1.44  
 -----------------------------------------
-SWAP:
-
------------------------------------------
+Processos na memoria swap:
 
 
-================= CURRENT TIME UNIT: 3 ============== 
-Process #1 makes Page #5 request
-Pagetable
-Frame #1: Page #4
-Frame #2: Page #5
+================= INSTANTE DE TEMPO: 3 ============== 
+Processo #2 foi criado
+
+Processo #1 faz requisicao da pagina #8.
+Pagetable do processo #1
+Frame #2: Page #8
+Frame #1: Page #44
 -----------------------------------------
-Process #2 makes Page #2 request
-Pagetable
-Frame #3: Page #2
+Processo #2 faz requisicao da pagina #31.
+Processo #2 foi pego da memoria swap.
+Pagetable do processo #2
+Frame #3: Page #31
 -----------------------------------------
-Processes:
+
+Processos ocupando ao menos uma frame:
 Process ID: 1
 Requests Done: 2
-Working Set: 4 | 5 | 0 | 0 | 
+Working Set: 44 | 8 | 0 | 0 | 
 -----------------------------------------
 Process ID: 2
+Requests Done: 1
+Working Set: 31 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.44  [F2]: 1.8  [F3]: 2.31  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 6 ============== 
+Processo #3 foi criado
+
+Processo #1 faz requisicao da pagina #19.
+Pagetable do processo #1
+Frame #2: Page #8
+Frame #4: Page #19
+Frame #1: Page #44
+-----------------------------------------
+Processo #2 faz requisicao da pagina #14.
+Pagetable do processo #2
+Frame #5: Page #14
+Frame #3: Page #31
+-----------------------------------------
+Processo #3 faz requisicao da pagina #2.
+Processo #3 foi pego da memoria swap.
+Pagetable do processo #3
+Frame #6: Page #2
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 3
+Working Set: 44 | 8 | 19 | 0 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 2
+Working Set: 31 | 14 | 0 | 0 | 
+-----------------------------------------
+Process ID: 3
 Requests Done: 1
 Working Set: 2 | 0 | 0 | 0 | 
 -----------------------------------------
-Virtual Memory:
-[1]: 4(1)  [2]: 5(1)  [3]: 2(2)  
+Frames:
+[F1]: 1.44  [F2]: 1.8  [F3]: 2.31  [F4]: 1.19  [F5]: 2.14  [F6]: 3.2  
 -----------------------------------------
-SWAP:
-
------------------------------------------
+Processos na memoria swap:
 
 
-================= CURRENT TIME UNIT: 6 ============== 
-Process #1 makes Page #7 request
-Pagetable
-Frame #1: Page #4
-Frame #2: Page #5
-Frame #4: Page #7
+================= INSTANTE DE TEMPO: 9 ============== 
+Processo #4 foi criado
+
+Processo #1 faz requisicao da pagina #18.
+Pagetable do processo #1
+Frame #2: Page #8
+Frame #7: Page #18
+Frame #4: Page #19
+Frame #1: Page #44
 -----------------------------------------
-Process #2 makes Page #5 request
-Pagetable
-Frame #3: Page #2
-Frame #5: Page #5
+Processo #2 faz requisicao da pagina #47.
+Pagetable do processo #2
+Frame #5: Page #14
+Frame #3: Page #31
+Frame #8: Page #47
 -----------------------------------------
-Process #3 makes Page #7 request
-Pagetable
-Frame #6: Page #7
+Processo #3 faz requisicao da pagina #46.
+Pagetable do processo #3
+Frame #6: Page #2
+Frame #9: Page #46
 -----------------------------------------
-Processes:
+Processo #4 faz requisicao da pagina #39.
+Processo #4 foi pego da memoria swap.
+Pagetable do processo #4
+Frame #10: Page #39
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
 Process ID: 1
-Requests Done: 3
-Working Set: 4 | 5 | 7 | 0 | 
+Requests Done: 4
+Working Set: 44 | 8 | 19 | 18 | 
 -----------------------------------------
 Process ID: 2
-Requests Done: 2
-Working Set: 2 | 5 | 0 | 0 | 
------------------------------------------
-Process ID: 3
-Requests Done: 1
-Working Set: 7 | 0 | 0 | 0 | 
------------------------------------------
-Virtual Memory:
-[1]: 4(1)  [2]: 5(1)  [3]: 2(2)  [4]: 7(1)  [5]: 5(2)  [6]: 7(3)  
------------------------------------------
-SWAP:
-
------------------------------------------
-
-
-================= CURRENT TIME UNIT: 9 ============== 
-Process #1 makes Page #7 request
-Pagetable
-Frame #1: Page #4
-Frame #2: Page #5
-Frame #4: Page #7
------------------------------------------
-Process #2 makes Page #4 request
-Pagetable
-Frame #3: Page #2
-Frame #7: Page #4
-Frame #5: Page #5
------------------------------------------
-Process #3 makes Page #5 request
-Pagetable
-Frame #8: Page #5
-Frame #6: Page #7
------------------------------------------
-Process #4 makes Page #7 request
-All frames are occupied
-Process making request: 4
-Process #1 was selected to be swaped out
-Frame #1 foi disponibilizada.
-Frame #2 foi disponibilizada.
-Frame #4 foi disponibilizada.
-Pagetable
------------------------------------------
-Processes:
-Process ID: 2
 Requests Done: 3
-Working Set: 2 | 5 | 4 | 0 | 
+Working Set: 31 | 14 | 47 | 0 | 
 -----------------------------------------
 Process ID: 3
 Requests Done: 2
-Working Set: 7 | 5 | 0 | 0 | 
+Working Set: 2 | 46 | 0 | 0 | 
 -----------------------------------------
 Process ID: 4
 Requests Done: 1
-Working Set: 7 | 0 | 0 | 0 | 
+Working Set: 39 | 0 | 0 | 0 | 
 -----------------------------------------
-Virtual Memory:
-[1]: 7(4)  [3]: 2(2)  [5]: 5(2)  [6]: 7(3)  [7]: 4(2)  [8]: 5(3)  
+Frames:
+[F1]: 1.44  [F2]: 1.8  [F3]: 2.31  [F4]: 1.19  [F5]: 2.14  [F6]: 3.2  [F7]: 1.18  [F8]: 2.47  [F9]: 3.46  [F10]: 4.39  
 -----------------------------------------
-SWAP:
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 12 ============== 
+Processo #5 foi criado
+
+Processo #1 faz requisicao da pagina #33.
+Pagetable do processo #1
+Frame #2: Page #8
+Frame #7: Page #18
+Frame #4: Page #19
+Frame #1: Page #33
+-----------------------------------------
+Processo #2 faz requisicao da pagina #22.
+Pagetable do processo #2
+Frame #5: Page #14
+Frame #11: Page #22
+Frame #3: Page #31
+Frame #8: Page #47
+-----------------------------------------
+Processo #3 faz requisicao da pagina #29.
+Pagetable do processo #3
+Frame #6: Page #2
+Frame #12: Page #29
+Frame #9: Page #46
+-----------------------------------------
+Processo #4 faz requisicao da pagina #39.
+Pagetable do processo #4
+Frame #10: Page #39
+-----------------------------------------
+Processo #5 faz requisicao da pagina #13.
+Processo #5 foi pego da memoria swap.
+Pagetable do processo #5
+Frame #13: Page #13
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
 Process ID: 1
+Requests Done: 5
+Working Set: 8 | 19 | 18 | 33 | 
+-----------------------------------------
+Process ID: 2
 Requests Done: 4
+Working Set: 31 | 14 | 47 | 22 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 3
+Working Set: 2 | 46 | 29 | 0 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 2
+Working Set: 39 | 0 | 0 | 0 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 1
+Working Set: 13 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.33  [F2]: 1.8  [F3]: 2.31  [F4]: 1.19  [F5]: 2.14  [F6]: 3.2  [F7]: 1.18  [F8]: 2.47  [F9]: 3.46  [F10]: 4.39  [F11]: 2.22  [F12]: 3.29  [F13]: 5.13  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 15 ============== 
+Processo #6 foi criado
+
+Processo #1 faz requisicao da pagina #43.
+Pagetable do processo #1
+Frame #7: Page #18
+Frame #4: Page #19
+Frame #1: Page #33
+Frame #2: Page #43
+-----------------------------------------
+Processo #2 faz requisicao da pagina #41.
+Pagetable do processo #2
+Frame #5: Page #14
+Frame #11: Page #22
+Frame #3: Page #41
+Frame #8: Page #47
+-----------------------------------------
+Processo #3 faz requisicao da pagina #33.
+Pagetable do processo #3
+Frame #6: Page #2
+Frame #12: Page #29
+Frame #14: Page #33
+Frame #9: Page #46
+-----------------------------------------
+Processo #4 faz requisicao da pagina #43.
+Pagetable do processo #4
+Frame #10: Page #39
+Frame #15: Page #43
+-----------------------------------------
+Processo #5 faz requisicao da pagina #6.
+Pagetable do processo #5
+Frame #16: Page #6
+Frame #13: Page #13
+-----------------------------------------
+Processo #6 faz requisicao da pagina #27.
+Processo #6 foi pego da memoria swap.
+Pagetable do processo #6
+Frame #17: Page #27
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 6
+Working Set: 19 | 18 | 33 | 43 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 5
+Working Set: 14 | 47 | 22 | 41 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 4
+Working Set: 2 | 46 | 29 | 33 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 3
+Working Set: 39 | 43 | 0 | 0 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 2
+Working Set: 13 | 6 | 0 | 0 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 1
+Working Set: 27 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.33  [F2]: 1.43  [F3]: 2.41  [F4]: 1.19  [F5]: 2.14  [F6]: 3.2  [F7]: 1.18  [F8]: 2.47  [F9]: 3.46  [F10]: 4.39  [F11]: 2.22  [F12]: 3.29  [F13]: 5.13  [F14]: 3.33  [F15]: 4.43  [F16]: 5.6  [F17]: 6.27  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 18 ============== 
+Processo #7 foi criado
+
+Processo #1 faz requisicao da pagina #1.
+Pagetable do processo #1
+Frame #4: Page #1
+Frame #7: Page #18
+Frame #1: Page #33
+Frame #2: Page #43
+-----------------------------------------
+Processo #2 faz requisicao da pagina #34.
+Pagetable do processo #2
+Frame #11: Page #22
+Frame #5: Page #34
+Frame #3: Page #41
+Frame #8: Page #47
+-----------------------------------------
+Processo #3 faz requisicao da pagina #31.
+Pagetable do processo #3
+Frame #12: Page #29
+Frame #6: Page #31
+Frame #14: Page #33
+Frame #9: Page #46
+-----------------------------------------
+Processo #4 faz requisicao da pagina #38.
+Pagetable do processo #4
+Frame #18: Page #38
+Frame #10: Page #39
+Frame #15: Page #43
+-----------------------------------------
+Processo #5 faz requisicao da pagina #14.
+Pagetable do processo #5
+Frame #16: Page #6
+Frame #13: Page #13
+Frame #19: Page #14
+-----------------------------------------
+Processo #6 faz requisicao da pagina #47.
+Pagetable do processo #6
+Frame #17: Page #27
+Frame #20: Page #47
+-----------------------------------------
+Processo #7 faz requisicao da pagina #46.
+Processo #7 foi pego da memoria swap.
+Pagetable do processo #7
+Frame #21: Page #46
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 7
+Working Set: 18 | 33 | 43 | 1 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 6
+Working Set: 47 | 22 | 41 | 34 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 5
+Working Set: 46 | 29 | 33 | 31 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 4
+Working Set: 39 | 43 | 38 | 0 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 3
+Working Set: 13 | 6 | 14 | 0 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 2
+Working Set: 27 | 47 | 0 | 0 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 1
+Working Set: 46 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.33  [F2]: 1.43  [F3]: 2.41  [F4]: 1.1  [F5]: 2.34  [F6]: 3.31  [F7]: 1.18  [F8]: 2.47  [F9]: 3.46  [F10]: 4.39  [F11]: 2.22  [F12]: 3.29  [F13]: 5.13  [F14]: 3.33  [F15]: 4.43  [F16]: 5.6  [F17]: 6.27  [F18]: 4.38  [F19]: 5.14  [F20]: 6.47  [F21]: 7.46  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 21 ============== 
+Processo #8 foi criado
+
+Processo #1 faz requisicao da pagina #35.
+Pagetable do processo #1
+Frame #4: Page #1
+Frame #1: Page #33
+Frame #7: Page #35
+Frame #2: Page #43
+-----------------------------------------
+Processo #2 faz requisicao da pagina #50.
+Pagetable do processo #2
+Frame #11: Page #22
+Frame #5: Page #34
+Frame #3: Page #41
+Frame #8: Page #50
+-----------------------------------------
+Processo #3 faz requisicao da pagina #10.
+Pagetable do processo #3
+Frame #9: Page #10
+Frame #12: Page #29
+Frame #6: Page #31
+Frame #14: Page #33
+-----------------------------------------
+Processo #4 faz requisicao da pagina #30.
+Pagetable do processo #4
+Frame #22: Page #30
+Frame #18: Page #38
+Frame #10: Page #39
+Frame #15: Page #43
+-----------------------------------------
+Processo #5 faz requisicao da pagina #9.
+Pagetable do processo #5
+Frame #16: Page #6
+Frame #23: Page #9
+Frame #13: Page #13
+Frame #19: Page #14
+-----------------------------------------
+Processo #6 faz requisicao da pagina #40.
+Pagetable do processo #6
+Frame #17: Page #27
+Frame #24: Page #40
+Frame #20: Page #47
+-----------------------------------------
+Processo #7 faz requisicao da pagina #49.
+Pagetable do processo #7
+Frame #21: Page #46
+Frame #25: Page #49
+-----------------------------------------
+Processo #8 faz requisicao da pagina #24.
+Processo #8 foi pego da memoria swap.
+Pagetable do processo #8
+Frame #26: Page #24
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 8
+Working Set: 33 | 43 | 1 | 35 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 7
+Working Set: 22 | 41 | 34 | 50 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 6
+Working Set: 29 | 33 | 31 | 10 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 5
+Working Set: 39 | 43 | 38 | 30 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 4
+Working Set: 13 | 6 | 14 | 9 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 3
+Working Set: 27 | 47 | 40 | 0 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 2
+Working Set: 46 | 49 | 0 | 0 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 1
+Working Set: 24 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.33  [F2]: 1.43  [F3]: 2.41  [F4]: 1.1  [F5]: 2.34  [F6]: 3.31  [F7]: 1.35  [F8]: 2.50  [F9]: 3.10  [F10]: 4.39  [F11]: 2.22  [F12]: 3.29  [F13]: 5.13  [F14]: 3.33  [F15]: 4.43  [F16]: 5.6  [F17]: 6.27  [F18]: 4.38  [F19]: 5.14  [F20]: 6.47  [F21]: 7.46  [F22]: 4.30  [F23]: 5.9  [F24]: 6.40  [F25]: 7.49  [F26]: 8.24  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 24 ============== 
+Processo #9 foi criado
+
+Processo #1 faz requisicao da pagina #42.
+Pagetable do processo #1
+Frame #4: Page #1
+Frame #7: Page #35
+Frame #1: Page #42
+Frame #2: Page #43
+-----------------------------------------
+Processo #2 faz requisicao da pagina #18.
+Pagetable do processo #2
+Frame #11: Page #18
+Frame #5: Page #34
+Frame #3: Page #41
+Frame #8: Page #50
+-----------------------------------------
+Processo #3 faz requisicao da pagina #23.
+Pagetable do processo #3
+Frame #9: Page #10
+Frame #12: Page #23
+Frame #6: Page #31
+Frame #14: Page #33
+-----------------------------------------
+Processo #4 faz requisicao da pagina #39.
+Pagetable do processo #4
+Frame #22: Page #30
+Frame #18: Page #38
+Frame #10: Page #39
+Frame #15: Page #43
+-----------------------------------------
+Processo #5 faz requisicao da pagina #9.
+Pagetable do processo #5
+Frame #16: Page #6
+Frame #23: Page #9
+Frame #13: Page #13
+Frame #19: Page #14
+-----------------------------------------
+Processo #6 faz requisicao da pagina #5.
+Pagetable do processo #6
+Frame #27: Page #5
+Frame #17: Page #27
+Frame #24: Page #40
+Frame #20: Page #47
+-----------------------------------------
+Processo #7 faz requisicao da pagina #10.
+Pagetable do processo #7
+Frame #28: Page #10
+Frame #21: Page #46
+Frame #25: Page #49
+-----------------------------------------
+Processo #8 faz requisicao da pagina #37.
+Pagetable do processo #8
+Frame #26: Page #24
+Frame #29: Page #37
+-----------------------------------------
+Processo #9 faz requisicao da pagina #43.
+Processo #9 foi pego da memoria swap.
+Pagetable do processo #9
+Frame #30: Page #43
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 9
+Working Set: 43 | 1 | 35 | 42 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 8
+Working Set: 41 | 34 | 50 | 18 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 7
+Working Set: 33 | 31 | 10 | 23 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 6
+Working Set: 43 | 38 | 30 | 39 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 5
+Working Set: 13 | 6 | 14 | 9 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 4
+Working Set: 27 | 47 | 40 | 5 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 3
+Working Set: 46 | 49 | 10 | 0 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 2
+Working Set: 24 | 37 | 0 | 0 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 1
+Working Set: 43 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.42  [F2]: 1.43  [F3]: 2.41  [F4]: 1.1  [F5]: 2.34  [F6]: 3.31  [F7]: 1.35  [F8]: 2.50  [F9]: 3.10  [F10]: 4.39  [F11]: 2.18  [F12]: 3.23  [F13]: 5.13  [F14]: 3.33  [F15]: 4.43  [F16]: 5.6  [F17]: 6.27  [F18]: 4.38  [F19]: 5.14  [F20]: 6.47  [F21]: 7.46  [F22]: 4.30  [F23]: 5.9  [F24]: 6.40  [F25]: 7.49  [F26]: 8.24  [F27]: 6.5  [F28]: 7.10  [F29]: 8.37  [F30]: 9.43  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 27 ============== 
+Processo #10 foi criado
+
+Processo #1 faz requisicao da pagina #24.
+Pagetable do processo #1
+Frame #4: Page #1
+Frame #2: Page #24
+Frame #7: Page #35
+Frame #1: Page #42
+-----------------------------------------
+Processo #2 faz requisicao da pagina #29.
+Pagetable do processo #2
+Frame #11: Page #18
+Frame #3: Page #29
+Frame #5: Page #34
+Frame #8: Page #50
+-----------------------------------------
+Processo #3 faz requisicao da pagina #35.
+Pagetable do processo #3
+Frame #9: Page #10
+Frame #12: Page #23
+Frame #6: Page #31
+Frame #14: Page #35
+-----------------------------------------
+Processo #4 faz requisicao da pagina #6.
+Pagetable do processo #4
+Frame #15: Page #6
+Frame #22: Page #30
+Frame #18: Page #38
+Frame #10: Page #39
+-----------------------------------------
+Processo #5 faz requisicao da pagina #23.
+Pagetable do processo #5
+Frame #16: Page #6
+Frame #23: Page #9
+Frame #19: Page #14
+Frame #13: Page #23
+-----------------------------------------
+Processo #6 faz requisicao da pagina #41.
+Pagetable do processo #6
+Frame #27: Page #5
+Frame #24: Page #40
+Frame #17: Page #41
+Frame #20: Page #47
+-----------------------------------------
+Processo #7 faz requisicao da pagina #34.
+Pagetable do processo #7
+Frame #28: Page #10
+Frame #31: Page #34
+Frame #21: Page #46
+Frame #25: Page #49
+-----------------------------------------
+Processo #8 faz requisicao da pagina #23.
+Pagetable do processo #8
+Frame #32: Page #23
+Frame #26: Page #24
+Frame #29: Page #37
+-----------------------------------------
+Processo #9 faz requisicao da pagina #24.
+Pagetable do processo #9
+Frame #33: Page #24
+Frame #30: Page #43
+-----------------------------------------
+Processo #10 faz requisicao da pagina #15.
+Processo #10 foi pego da memoria swap.
+Pagetable do processo #10
+Frame #34: Page #15
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 10
+Working Set: 1 | 35 | 42 | 24 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 9
+Working Set: 34 | 50 | 18 | 29 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 8
+Working Set: 31 | 10 | 23 | 35 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 7
+Working Set: 38 | 30 | 39 | 6 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 6
+Working Set: 6 | 14 | 9 | 23 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 5
+Working Set: 47 | 40 | 5 | 41 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 4
+Working Set: 46 | 49 | 10 | 34 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 3
+Working Set: 24 | 37 | 23 | 0 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 2
+Working Set: 43 | 24 | 0 | 0 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 1
+Working Set: 15 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.42  [F2]: 1.24  [F3]: 2.29  [F4]: 1.1  [F5]: 2.34  [F6]: 3.31  [F7]: 1.35  [F8]: 2.50  [F9]: 3.10  [F10]: 4.39  [F11]: 2.18  [F12]: 3.23  [F13]: 5.23  [F14]: 3.35  [F15]: 4.6  [F16]: 5.6  [F17]: 6.41  [F18]: 4.38  [F19]: 5.14  [F20]: 6.47  [F21]: 7.46  [F22]: 4.30  [F23]: 5.9  [F24]: 6.40  [F25]: 7.49  [F26]: 8.24  [F27]: 6.5  [F28]: 7.10  [F29]: 8.37  [F30]: 9.43  [F31]: 7.34  [F32]: 8.23  [F33]: 9.24  [F34]: 10.15  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 30 ============== 
+Processo #11 foi criado
+
+Processo #1 faz requisicao da pagina #11.
+Pagetable do processo #1
+Frame #4: Page #11
+Frame #2: Page #24
+Frame #7: Page #35
+Frame #1: Page #42
+-----------------------------------------
+Processo #2 faz requisicao da pagina #39.
+Pagetable do processo #2
+Frame #11: Page #18
+Frame #3: Page #29
+Frame #5: Page #39
+Frame #8: Page #50
+-----------------------------------------
+Processo #3 faz requisicao da pagina #13.
+Pagetable do processo #3
+Frame #9: Page #10
+Frame #6: Page #13
+Frame #12: Page #23
+Frame #14: Page #35
+-----------------------------------------
+Processo #4 faz requisicao da pagina #6.
+Pagetable do processo #4
+Frame #15: Page #6
+Frame #22: Page #30
+Frame #18: Page #38
+Frame #10: Page #39
+-----------------------------------------
+Processo #5 faz requisicao da pagina #26.
+Pagetable do processo #5
+Frame #23: Page #9
+Frame #19: Page #14
+Frame #13: Page #23
+Frame #16: Page #26
+-----------------------------------------
+Processo #6 faz requisicao da pagina #13.
+Pagetable do processo #6
+Frame #27: Page #5
+Frame #20: Page #13
+Frame #24: Page #40
+Frame #17: Page #41
+-----------------------------------------
+Processo #7 faz requisicao da pagina #17.
+Pagetable do processo #7
+Frame #28: Page #10
+Frame #21: Page #17
+Frame #31: Page #34
+Frame #25: Page #49
+-----------------------------------------
+Processo #8 faz requisicao da pagina #5.
+Pagetable do processo #8
+Frame #35: Page #5
+Frame #32: Page #23
+Frame #26: Page #24
+Frame #29: Page #37
+-----------------------------------------
+Processo #9 faz requisicao da pagina #23.
+Pagetable do processo #9
+Frame #36: Page #23
+Frame #33: Page #24
+Frame #30: Page #43
+-----------------------------------------
+Processo #10 faz requisicao da pagina #9.
+Pagetable do processo #10
+Frame #37: Page #9
+Frame #34: Page #15
+-----------------------------------------
+Processo #11 faz requisicao da pagina #5.
+Processo #11 foi pego da memoria swap.
+Pagetable do processo #11
+Frame #38: Page #5
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 11
+Working Set: 35 | 42 | 24 | 11 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 10
+Working Set: 50 | 18 | 29 | 39 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 9
+Working Set: 10 | 23 | 35 | 13 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 8
+Working Set: 38 | 30 | 39 | 6 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 7
+Working Set: 14 | 9 | 23 | 26 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 6
+Working Set: 40 | 5 | 41 | 13 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 5
+Working Set: 49 | 10 | 34 | 17 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 4
+Working Set: 24 | 37 | 23 | 5 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 3
+Working Set: 43 | 24 | 23 | 0 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 2
+Working Set: 15 | 9 | 0 | 0 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 1
+Working Set: 5 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.42  [F2]: 1.24  [F3]: 2.29  [F4]: 1.11  [F5]: 2.39  [F6]: 3.13  [F7]: 1.35  [F8]: 2.50  [F9]: 3.10  [F10]: 4.39  [F11]: 2.18  [F12]: 3.23  [F13]: 5.23  [F14]: 3.35  [F15]: 4.6  [F16]: 5.26  [F17]: 6.41  [F18]: 4.38  [F19]: 5.14  [F20]: 6.13  [F21]: 7.17  [F22]: 4.30  [F23]: 5.9  [F24]: 6.40  [F25]: 7.49  [F26]: 8.24  [F27]: 6.5  [F28]: 7.10  [F29]: 8.37  [F30]: 9.43  [F31]: 7.34  [F32]: 8.23  [F33]: 9.24  [F34]: 10.15  [F35]: 8.5  [F36]: 9.23  [F37]: 10.9  [F38]: 11.5  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 33 ============== 
+Processo #12 foi criado
+
+Processo #1 faz requisicao da pagina #49.
+Pagetable do processo #1
+Frame #4: Page #11
+Frame #2: Page #24
+Frame #1: Page #42
+Frame #7: Page #49
+-----------------------------------------
+Processo #2 faz requisicao da pagina #50.
+Pagetable do processo #2
+Frame #11: Page #18
+Frame #3: Page #29
+Frame #5: Page #39
+Frame #8: Page #50
+-----------------------------------------
+Processo #3 faz requisicao da pagina #25.
+Pagetable do processo #3
+Frame #6: Page #13
+Frame #12: Page #23
+Frame #9: Page #25
+Frame #14: Page #35
+-----------------------------------------
+Processo #4 faz requisicao da pagina #21.
+Pagetable do processo #4
+Frame #15: Page #6
+Frame #18: Page #21
+Frame #22: Page #30
+Frame #10: Page #39
+-----------------------------------------
+Processo #5 faz requisicao da pagina #40.
+Pagetable do processo #5
+Frame #23: Page #9
+Frame #13: Page #23
+Frame #16: Page #26
+Frame #19: Page #40
+-----------------------------------------
+Processo #6 faz requisicao da pagina #33.
+Pagetable do processo #6
+Frame #27: Page #5
+Frame #20: Page #13
+Frame #24: Page #33
+Frame #17: Page #41
+-----------------------------------------
+Processo #7 faz requisicao da pagina #27.
+Pagetable do processo #7
+Frame #28: Page #10
+Frame #21: Page #17
+Frame #25: Page #27
+Frame #31: Page #34
+-----------------------------------------
+Processo #8 faz requisicao da pagina #50.
+Pagetable do processo #8
+Frame #35: Page #5
+Frame #32: Page #23
+Frame #29: Page #37
+Frame #26: Page #50
+-----------------------------------------
+Processo #9 faz requisicao da pagina #19.
+Pagetable do processo #9
+Frame #39: Page #19
+Frame #36: Page #23
+Frame #33: Page #24
+Frame #30: Page #43
+-----------------------------------------
+Processo #10 faz requisicao da pagina #19.
+Pagetable do processo #10
+Frame #37: Page #9
+Frame #34: Page #15
+Frame #40: Page #19
+-----------------------------------------
+Processo #11 faz requisicao da pagina #23.
+Pagetable do processo #11
+Frame #38: Page #5
+Frame #41: Page #23
+-----------------------------------------
+Processo #12 faz requisicao da pagina #50.
+Processo #12 foi pego da memoria swap.
+Pagetable do processo #12
+Frame #42: Page #50
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 12
+Working Set: 42 | 24 | 11 | 49 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 11
+Working Set: 18 | 29 | 39 | 50 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 10
+Working Set: 23 | 35 | 13 | 25 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 9
+Working Set: 30 | 39 | 6 | 21 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 8
+Working Set: 9 | 23 | 26 | 40 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 7
+Working Set: 5 | 41 | 13 | 33 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 6
+Working Set: 10 | 34 | 17 | 27 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 5
+Working Set: 37 | 23 | 5 | 50 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 4
+Working Set: 43 | 24 | 23 | 19 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 3
+Working Set: 15 | 9 | 19 | 0 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 2
+Working Set: 5 | 23 | 0 | 0 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 1
+Working Set: 50 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.42  [F2]: 1.24  [F3]: 2.29  [F4]: 1.11  [F5]: 2.39  [F6]: 3.13  [F7]: 1.49  [F8]: 2.50  [F9]: 3.25  [F10]: 4.39  [F11]: 2.18  [F12]: 3.23  [F13]: 5.23  [F14]: 3.35  [F15]: 4.6  [F16]: 5.26  [F17]: 6.41  [F18]: 4.21  [F19]: 5.40  [F20]: 6.13  [F21]: 7.17  [F22]: 4.30  [F23]: 5.9  [F24]: 6.33  [F25]: 7.27  [F26]: 8.50  [F27]: 6.5  [F28]: 7.10  [F29]: 8.37  [F30]: 9.43  [F31]: 7.34  [F32]: 8.23  [F33]: 9.24  [F34]: 10.15  [F35]: 8.5  [F36]: 9.23  [F37]: 10.9  [F38]: 11.5  [F39]: 9.19  [F40]: 10.19  [F41]: 11.23  [F42]: 12.50  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 36 ============== 
+Processo #13 foi criado
+
+Processo #1 faz requisicao da pagina #3.
+Pagetable do processo #1
+Frame #1: Page #3
+Frame #4: Page #11
+Frame #2: Page #24
+Frame #7: Page #49
+-----------------------------------------
+Processo #2 faz requisicao da pagina #31.
+Pagetable do processo #2
+Frame #3: Page #29
+Frame #11: Page #31
+Frame #5: Page #39
+Frame #8: Page #50
+-----------------------------------------
+Processo #3 faz requisicao da pagina #22.
+Pagetable do processo #3
+Frame #6: Page #13
+Frame #12: Page #22
+Frame #9: Page #25
+Frame #14: Page #35
+-----------------------------------------
+Processo #4 faz requisicao da pagina #43.
+Pagetable do processo #4
+Frame #15: Page #6
+Frame #18: Page #21
+Frame #10: Page #39
+Frame #22: Page #43
+-----------------------------------------
+Processo #5 faz requisicao da pagina #14.
+Pagetable do processo #5
+Frame #23: Page #14
+Frame #13: Page #23
+Frame #16: Page #26
+Frame #19: Page #40
+-----------------------------------------
+Processo #6 faz requisicao da pagina #45.
+Pagetable do processo #6
+Frame #20: Page #13
+Frame #24: Page #33
+Frame #17: Page #41
+Frame #27: Page #45
+-----------------------------------------
+Processo #7 faz requisicao da pagina #18.
+Pagetable do processo #7
+Frame #21: Page #17
+Frame #28: Page #18
+Frame #25: Page #27
+Frame #31: Page #34
+-----------------------------------------
+Processo #8 faz requisicao da pagina #30.
+Pagetable do processo #8
+Frame #35: Page #5
+Frame #32: Page #23
+Frame #29: Page #30
+Frame #26: Page #50
+-----------------------------------------
+Processo #9 faz requisicao da pagina #7.
+Pagetable do processo #9
+Frame #30: Page #7
+Frame #39: Page #19
+Frame #36: Page #23
+Frame #33: Page #24
+-----------------------------------------
+Processo #10 faz requisicao da pagina #7.
+Pagetable do processo #10
+Frame #43: Page #7
+Frame #37: Page #9
+Frame #34: Page #15
+Frame #40: Page #19
+-----------------------------------------
+Processo #11 faz requisicao da pagina #43.
+Pagetable do processo #11
+Frame #38: Page #5
+Frame #41: Page #23
+Frame #44: Page #43
+-----------------------------------------
+Processo #12 faz requisicao da pagina #14.
+Pagetable do processo #12
+Frame #45: Page #14
+Frame #42: Page #50
+-----------------------------------------
+Processo #13 faz requisicao da pagina #34.
+Processo #13 foi pego da memoria swap.
+Pagetable do processo #13
+Frame #46: Page #34
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 13
+Working Set: 24 | 11 | 49 | 3 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 12
+Working Set: 29 | 39 | 50 | 31 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 11
+Working Set: 35 | 13 | 25 | 22 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 10
+Working Set: 39 | 6 | 21 | 43 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 9
+Working Set: 23 | 26 | 40 | 14 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 8
+Working Set: 41 | 13 | 33 | 45 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 7
+Working Set: 34 | 17 | 27 | 18 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 6
+Working Set: 23 | 5 | 50 | 30 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 5
+Working Set: 24 | 23 | 19 | 7 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 4
+Working Set: 15 | 9 | 19 | 7 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 3
+Working Set: 5 | 23 | 43 | 0 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 2
+Working Set: 50 | 14 | 0 | 0 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 1
+Working Set: 34 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.3  [F2]: 1.24  [F3]: 2.29  [F4]: 1.11  [F5]: 2.39  [F6]: 3.13  [F7]: 1.49  [F8]: 2.50  [F9]: 3.25  [F10]: 4.39  [F11]: 2.31  [F12]: 3.22  [F13]: 5.23  [F14]: 3.35  [F15]: 4.6  [F16]: 5.26  [F17]: 6.41  [F18]: 4.21  [F19]: 5.40  [F20]: 6.13  [F21]: 7.17  [F22]: 4.43  [F23]: 5.14  [F24]: 6.33  [F25]: 7.27  [F26]: 8.50  [F27]: 6.45  [F28]: 7.18  [F29]: 8.30  [F30]: 9.7  [F31]: 7.34  [F32]: 8.23  [F33]: 9.24  [F34]: 10.15  [F35]: 8.5  [F36]: 9.23  [F37]: 10.9  [F38]: 11.5  [F39]: 9.19  [F40]: 10.19  [F41]: 11.23  [F42]: 12.50  [F43]: 10.7  [F44]: 11.43  [F45]: 12.14  [F46]: 13.34  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 39 ============== 
+Processo #14 foi criado
+
+Processo #1 faz requisicao da pagina #7.
+Pagetable do processo #1
+Frame #1: Page #3
+Frame #2: Page #7
+Frame #4: Page #11
+Frame #7: Page #49
+-----------------------------------------
+Processo #2 faz requisicao da pagina #30.
+Pagetable do processo #2
+Frame #3: Page #30
+Frame #11: Page #31
+Frame #5: Page #39
+Frame #8: Page #50
+-----------------------------------------
+Processo #3 faz requisicao da pagina #38.
+Pagetable do processo #3
+Frame #6: Page #13
+Frame #12: Page #22
+Frame #9: Page #25
+Frame #14: Page #38
+-----------------------------------------
+Processo #4 faz requisicao da pagina #29.
+Pagetable do processo #4
+Frame #15: Page #6
+Frame #18: Page #21
+Frame #10: Page #29
+Frame #22: Page #43
+-----------------------------------------
+Processo #5 faz requisicao da pagina #38.
+Pagetable do processo #5
+Frame #23: Page #14
+Frame #16: Page #26
+Frame #13: Page #38
+Frame #19: Page #40
+-----------------------------------------
+Processo #6 faz requisicao da pagina #45.
+Pagetable do processo #6
+Frame #20: Page #13
+Frame #24: Page #33
+Frame #17: Page #41
+Frame #27: Page #45
+-----------------------------------------
+Processo #7 faz requisicao da pagina #29.
+Pagetable do processo #7
+Frame #21: Page #17
+Frame #28: Page #18
+Frame #25: Page #27
+Frame #31: Page #29
+-----------------------------------------
+Processo #8 faz requisicao da pagina #39.
+Pagetable do processo #8
+Frame #35: Page #5
+Frame #29: Page #30
+Frame #32: Page #39
+Frame #26: Page #50
+-----------------------------------------
+Processo #9 faz requisicao da pagina #19.
+Pagetable do processo #9
+Frame #30: Page #7
+Frame #39: Page #19
+Frame #36: Page #23
+Frame #33: Page #24
+-----------------------------------------
+Processo #10 faz requisicao da pagina #1.
+Pagetable do processo #10
+Frame #34: Page #1
+Frame #43: Page #7
+Frame #37: Page #9
+Frame #40: Page #19
+-----------------------------------------
+Processo #11 faz requisicao da pagina #29.
+Pagetable do processo #11
+Frame #38: Page #5
+Frame #41: Page #23
+Frame #47: Page #29
+Frame #44: Page #43
+-----------------------------------------
+Processo #12 faz requisicao da pagina #1.
+Pagetable do processo #12
+Frame #48: Page #1
+Frame #45: Page #14
+Frame #42: Page #50
+-----------------------------------------
+Processo #13 faz requisicao da pagina #27.
+Pagetable do processo #13
+Frame #49: Page #27
+Frame #46: Page #34
+-----------------------------------------
+Processo #14 faz requisicao da pagina #28.
+Processo #14 foi pego da memoria swap.
+Pagetable do processo #14
+Frame #50: Page #28
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 14
+Working Set: 11 | 49 | 3 | 7 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 13
+Working Set: 39 | 50 | 31 | 30 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 12
+Working Set: 13 | 25 | 22 | 38 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 11
+Working Set: 6 | 21 | 43 | 29 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 10
+Working Set: 26 | 40 | 14 | 38 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 9
+Working Set: 41 | 13 | 33 | 45 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 8
+Working Set: 17 | 27 | 18 | 29 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 7
+Working Set: 5 | 50 | 30 | 39 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 6
+Working Set: 24 | 23 | 7 | 19 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 5
+Working Set: 9 | 19 | 7 | 1 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 4
+Working Set: 5 | 23 | 43 | 29 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 3
+Working Set: 50 | 14 | 1 | 0 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 2
+Working Set: 34 | 27 | 0 | 0 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 1
+Working Set: 28 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.3  [F2]: 1.7  [F3]: 2.30  [F4]: 1.11  [F5]: 2.39  [F6]: 3.13  [F7]: 1.49  [F8]: 2.50  [F9]: 3.25  [F10]: 4.29  [F11]: 2.31  [F12]: 3.22  [F13]: 5.38  [F14]: 3.38  [F15]: 4.6  [F16]: 5.26  [F17]: 6.41  [F18]: 4.21  [F19]: 5.40  [F20]: 6.13  [F21]: 7.17  [F22]: 4.43  [F23]: 5.14  [F24]: 6.33  [F25]: 7.27  [F26]: 8.50  [F27]: 6.45  [F28]: 7.18  [F29]: 8.30  [F30]: 9.7  [F31]: 7.29  [F32]: 8.39  [F33]: 9.24  [F34]: 10.1  [F35]: 8.5  [F36]: 9.23  [F37]: 10.9  [F38]: 11.5  [F39]: 9.19  [F40]: 10.19  [F41]: 11.23  [F42]: 12.50  [F43]: 10.7  [F44]: 11.43  [F45]: 12.14  [F46]: 13.34  [F47]: 11.29  [F48]: 12.1  [F49]: 13.27  [F50]: 14.28  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 42 ============== 
+Processo #15 foi criado
+
+Processo #1 faz requisicao da pagina #21.
+Pagetable do processo #1
+Frame #1: Page #3
+Frame #2: Page #7
+Frame #4: Page #21
+Frame #7: Page #49
+-----------------------------------------
+Processo #2 faz requisicao da pagina #45.
+Pagetable do processo #2
+Frame #3: Page #30
+Frame #11: Page #31
+Frame #5: Page #45
+Frame #8: Page #50
+-----------------------------------------
+Processo #3 faz requisicao da pagina #50.
+Pagetable do processo #3
+Frame #12: Page #22
+Frame #9: Page #25
+Frame #14: Page #38
+Frame #6: Page #50
+-----------------------------------------
+Processo #4 faz requisicao da pagina #20.
+Pagetable do processo #4
+Frame #15: Page #20
+Frame #18: Page #21
+Frame #10: Page #29
+Frame #22: Page #43
+-----------------------------------------
+Processo #5 faz requisicao da pagina #50.
+Pagetable do processo #5
+Frame #23: Page #14
+Frame #13: Page #38
+Frame #19: Page #40
+Frame #16: Page #50
+-----------------------------------------
+Processo #6 faz requisicao da pagina #30.
+Pagetable do processo #6
+Frame #20: Page #13
+Frame #17: Page #30
+Frame #24: Page #33
+Frame #27: Page #45
+-----------------------------------------
+Processo #7 faz requisicao da pagina #42.
+Pagetable do processo #7
+Frame #28: Page #18
+Frame #25: Page #27
+Frame #31: Page #29
+Frame #21: Page #42
+-----------------------------------------
+Processo #8 faz requisicao da pagina #44.
+Pagetable do processo #8
+Frame #29: Page #30
+Frame #32: Page #39
+Frame #35: Page #44
+Frame #26: Page #50
+-----------------------------------------
+Processo #9 faz requisicao da pagina #46.
+Pagetable do processo #9
+Frame #30: Page #7
+Frame #39: Page #19
+Frame #36: Page #23
+Frame #33: Page #46
+-----------------------------------------
+Processo #10 faz requisicao da pagina #38.
+Pagetable do processo #10
+Frame #34: Page #1
+Frame #43: Page #7
+Frame #40: Page #19
+Frame #37: Page #38
+-----------------------------------------
+Processo #11 faz requisicao da pagina #14.
+Pagetable do processo #11
+Frame #38: Page #14
+Frame #41: Page #23
+Frame #47: Page #29
+Frame #44: Page #43
+-----------------------------------------
+Processo #12 faz requisicao da pagina #25.
+Pagetable do processo #12
+Frame #48: Page #1
+Frame #45: Page #14
+Frame #51: Page #25
+Frame #42: Page #50
+-----------------------------------------
+Processo #13 faz requisicao da pagina #44.
+Pagetable do processo #13
+Frame #49: Page #27
+Frame #46: Page #34
+Frame #52: Page #44
+-----------------------------------------
+Processo #14 faz requisicao da pagina #22.
+Pagetable do processo #14
+Frame #53: Page #22
+Frame #50: Page #28
+-----------------------------------------
+Processo #15 faz requisicao da pagina #17.
+Processo #15 foi pego da memoria swap.
+Pagetable do processo #15
+Frame #54: Page #17
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 15
+Working Set: 49 | 3 | 7 | 21 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 14
+Working Set: 50 | 31 | 30 | 45 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 13
+Working Set: 25 | 22 | 38 | 50 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 12
+Working Set: 21 | 43 | 29 | 20 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 11
+Working Set: 40 | 14 | 38 | 50 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 10
+Working Set: 13 | 33 | 45 | 30 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 9
+Working Set: 27 | 18 | 29 | 42 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 8
+Working Set: 50 | 30 | 39 | 44 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 7
+Working Set: 23 | 7 | 19 | 46 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 6
+Working Set: 19 | 7 | 1 | 38 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 5
+Working Set: 23 | 43 | 29 | 14 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 4
+Working Set: 50 | 14 | 1 | 25 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 3
+Working Set: 34 | 27 | 44 | 0 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 2
+Working Set: 28 | 22 | 0 | 0 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 1
+Working Set: 17 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.3  [F2]: 1.7  [F3]: 2.30  [F4]: 1.21  [F5]: 2.45  [F6]: 3.50  [F7]: 1.49  [F8]: 2.50  [F9]: 3.25  [F10]: 4.29  [F11]: 2.31  [F12]: 3.22  [F13]: 5.38  [F14]: 3.38  [F15]: 4.20  [F16]: 5.50  [F17]: 6.30  [F18]: 4.21  [F19]: 5.40  [F20]: 6.13  [F21]: 7.42  [F22]: 4.43  [F23]: 5.14  [F24]: 6.33  [F25]: 7.27  [F26]: 8.50  [F27]: 6.45  [F28]: 7.18  [F29]: 8.30  [F30]: 9.7  [F31]: 7.29  [F32]: 8.39  [F33]: 9.46  [F34]: 10.1  [F35]: 8.44  [F36]: 9.23  [F37]: 10.38  [F38]: 11.14  [F39]: 9.19  [F40]: 10.19  [F41]: 11.23  [F42]: 12.50  [F43]: 10.7  [F44]: 11.43  [F45]: 12.14  [F46]: 13.34  [F47]: 11.29  [F48]: 12.1  [F49]: 13.27  [F50]: 14.28  [F51]: 12.25  [F52]: 13.44  [F53]: 14.22  [F54]: 15.17  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 45 ============== 
+Processo #16 foi criado
+
+Processo #1 faz requisicao da pagina #7.
+Pagetable do processo #1
+Frame #1: Page #3
+Frame #2: Page #7
+Frame #4: Page #21
+Frame #7: Page #49
+-----------------------------------------
+Processo #2 faz requisicao da pagina #5.
+Pagetable do processo #2
+Frame #8: Page #5
+Frame #3: Page #30
+Frame #11: Page #31
+Frame #5: Page #45
+-----------------------------------------
+Processo #3 faz requisicao da pagina #23.
+Pagetable do processo #3
+Frame #12: Page #22
+Frame #9: Page #23
+Frame #14: Page #38
+Frame #6: Page #50
+-----------------------------------------
+Processo #4 faz requisicao da pagina #36.
+Pagetable do processo #4
+Frame #15: Page #20
+Frame #10: Page #29
+Frame #18: Page #36
+Frame #22: Page #43
+-----------------------------------------
+Processo #5 faz requisicao da pagina #44.
+Pagetable do processo #5
+Frame #23: Page #14
+Frame #13: Page #38
+Frame #19: Page #44
+Frame #16: Page #50
+-----------------------------------------
+Processo #6 faz requisicao da pagina #4.
+Pagetable do processo #6
+Frame #20: Page #4
+Frame #17: Page #30
+Frame #24: Page #33
+Frame #27: Page #45
+-----------------------------------------
+Processo #7 faz requisicao da pagina #24.
+Pagetable do processo #7
+Frame #28: Page #18
+Frame #25: Page #24
+Frame #31: Page #29
+Frame #21: Page #42
+-----------------------------------------
+Processo #8 faz requisicao da pagina #40.
+Pagetable do processo #8
+Frame #29: Page #30
+Frame #32: Page #39
+Frame #26: Page #40
+Frame #35: Page #44
+-----------------------------------------
+Processo #9 faz requisicao da pagina #32.
+Pagetable do processo #9
+Frame #30: Page #7
+Frame #39: Page #19
+Frame #36: Page #32
+Frame #33: Page #46
+-----------------------------------------
+Processo #10 faz requisicao da pagina #14.
+Pagetable do processo #10
+Frame #34: Page #1
+Frame #43: Page #7
+Frame #40: Page #14
+Frame #37: Page #38
+-----------------------------------------
+Processo #11 faz requisicao da pagina #8.
+Pagetable do processo #11
+Frame #41: Page #8
+Frame #38: Page #14
+Frame #47: Page #29
+Frame #44: Page #43
+-----------------------------------------
+Processo #12 faz requisicao da pagina #33.
+Pagetable do processo #12
+Frame #48: Page #1
+Frame #45: Page #14
+Frame #51: Page #25
+Frame #42: Page #33
+-----------------------------------------
+Processo #13 faz requisicao da pagina #42.
+Pagetable do processo #13
+Frame #49: Page #27
+Frame #46: Page #34
+Frame #55: Page #42
+Frame #52: Page #44
+-----------------------------------------
+Processo #14 faz requisicao da pagina #10.
+Pagetable do processo #14
+Frame #56: Page #10
+Frame #53: Page #22
+Frame #50: Page #28
+-----------------------------------------
+Processo #15 faz requisicao da pagina #11.
+Pagetable do processo #15
+Frame #57: Page #11
+Frame #54: Page #17
+-----------------------------------------
+Processo #16 faz requisicao da pagina #19.
+Processo #16 foi pego da memoria swap.
+Pagetable do processo #16
+Frame #58: Page #19
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 16
+Working Set: 49 | 3 | 21 | 7 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 15
+Working Set: 31 | 30 | 45 | 5 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 14
+Working Set: 22 | 38 | 50 | 23 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 13
+Working Set: 43 | 29 | 20 | 36 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 12
+Working Set: 14 | 38 | 50 | 44 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 11
+Working Set: 33 | 45 | 30 | 4 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 10
+Working Set: 18 | 29 | 42 | 24 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 9
+Working Set: 30 | 39 | 44 | 40 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 8
+Working Set: 7 | 19 | 46 | 32 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 7
+Working Set: 7 | 1 | 38 | 14 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 6
+Working Set: 43 | 29 | 14 | 8 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 5
+Working Set: 14 | 1 | 25 | 33 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 4
+Working Set: 34 | 27 | 44 | 42 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 3
+Working Set: 28 | 22 | 10 | 0 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 2
+Working Set: 17 | 11 | 0 | 0 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 1
+Working Set: 19 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.3  [F2]: 1.7  [F3]: 2.30  [F4]: 1.21  [F5]: 2.45  [F6]: 3.50  [F7]: 1.49  [F8]: 2.5  [F9]: 3.23  [F10]: 4.29  [F11]: 2.31  [F12]: 3.22  [F13]: 5.38  [F14]: 3.38  [F15]: 4.20  [F16]: 5.50  [F17]: 6.30  [F18]: 4.36  [F19]: 5.44  [F20]: 6.4  [F21]: 7.42  [F22]: 4.43  [F23]: 5.14  [F24]: 6.33  [F25]: 7.24  [F26]: 8.40  [F27]: 6.45  [F28]: 7.18  [F29]: 8.30  [F30]: 9.7  [F31]: 7.29  [F32]: 8.39  [F33]: 9.46  [F34]: 10.1  [F35]: 8.44  [F36]: 9.32  [F37]: 10.38  [F38]: 11.14  [F39]: 9.19  [F40]: 10.14  [F41]: 11.8  [F42]: 12.33  [F43]: 10.7  [F44]: 11.43  [F45]: 12.14  [F46]: 13.34  [F47]: 11.29  [F48]: 12.1  [F49]: 13.27  [F50]: 14.28  [F51]: 12.25  [F52]: 13.44  [F53]: 14.22  [F54]: 15.17  [F55]: 13.42  [F56]: 14.10  [F57]: 15.11  [F58]: 16.19  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 48 ============== 
+Processo #17 foi criado
+
+Processo #1 faz requisicao da pagina #31.
+Pagetable do processo #1
+Frame #1: Page #3
+Frame #2: Page #7
+Frame #4: Page #21
+Frame #7: Page #31
+-----------------------------------------
+Processo #2 faz requisicao da pagina #6.
+Pagetable do processo #2
+Frame #8: Page #5
+Frame #11: Page #6
+Frame #3: Page #30
+Frame #5: Page #45
+-----------------------------------------
+Processo #3 faz requisicao da pagina #21.
+Pagetable do processo #3
+Frame #12: Page #21
+Frame #9: Page #23
+Frame #14: Page #38
+Frame #6: Page #50
+-----------------------------------------
+Processo #4 faz requisicao da pagina #2.
+Pagetable do processo #4
+Frame #22: Page #2
+Frame #15: Page #20
+Frame #10: Page #29
+Frame #18: Page #36
+-----------------------------------------
+Processo #5 faz requisicao da pagina #7.
+Pagetable do processo #5
+Frame #23: Page #7
+Frame #13: Page #38
+Frame #19: Page #44
+Frame #16: Page #50
+-----------------------------------------
+Processo #6 faz requisicao da pagina #2.
+Pagetable do processo #6
+Frame #24: Page #2
+Frame #20: Page #4
+Frame #17: Page #30
+Frame #27: Page #45
+-----------------------------------------
+Processo #7 faz requisicao da pagina #43.
+Pagetable do processo #7
+Frame #25: Page #24
+Frame #31: Page #29
+Frame #21: Page #42
+Frame #28: Page #43
+-----------------------------------------
+Processo #8 faz requisicao da pagina #2.
+Pagetable do processo #8
+Frame #29: Page #2
+Frame #32: Page #39
+Frame #26: Page #40
+Frame #35: Page #44
+-----------------------------------------
+Processo #9 faz requisicao da pagina #47.
+Pagetable do processo #9
+Frame #39: Page #19
+Frame #36: Page #32
+Frame #33: Page #46
+Frame #30: Page #47
+-----------------------------------------
+Processo #10 faz requisicao da pagina #32.
+Pagetable do processo #10
+Frame #34: Page #1
+Frame #40: Page #14
+Frame #43: Page #32
+Frame #37: Page #38
+-----------------------------------------
+Processo #11 faz requisicao da pagina #15.
+Pagetable do processo #11
+Frame #41: Page #8
+Frame #38: Page #14
+Frame #44: Page #15
+Frame #47: Page #29
+-----------------------------------------
+Processo #12 faz requisicao da pagina #22.
+Pagetable do processo #12
+Frame #48: Page #1
+Frame #45: Page #22
+Frame #51: Page #25
+Frame #42: Page #33
+-----------------------------------------
+Processo #13 faz requisicao da pagina #25.
+Pagetable do processo #13
+Frame #46: Page #25
+Frame #49: Page #27
+Frame #55: Page #42
+Frame #52: Page #44
+-----------------------------------------
+Processo #14 faz requisicao da pagina #38.
+Pagetable do processo #14
+Frame #56: Page #10
+Frame #53: Page #22
+Frame #50: Page #28
+Frame #59: Page #38
+-----------------------------------------
+Processo #15 faz requisicao da pagina #38.
+Pagetable do processo #15
+Frame #57: Page #11
+Frame #54: Page #17
+Frame #60: Page #38
+-----------------------------------------
+Processo #16 faz requisicao da pagina #31.
+Pagetable do processo #16
+Frame #58: Page #19
+Frame #61: Page #31
+-----------------------------------------
+Processo #17 faz requisicao da pagina #42.
+Processo #17 foi pego da memoria swap.
+Pagetable do processo #17
+Frame #62: Page #42
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 1
+Requests Done: 17
+Working Set: 3 | 21 | 7 | 31 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 16
+Working Set: 30 | 45 | 5 | 6 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 15
+Working Set: 38 | 50 | 23 | 21 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 14
+Working Set: 29 | 20 | 36 | 2 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 13
+Working Set: 38 | 50 | 44 | 7 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 12
+Working Set: 45 | 30 | 4 | 2 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 11
+Working Set: 29 | 42 | 24 | 43 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 10
+Working Set: 39 | 44 | 40 | 2 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 9
+Working Set: 19 | 46 | 32 | 47 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 8
+Working Set: 1 | 38 | 14 | 32 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 7
+Working Set: 29 | 14 | 8 | 15 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 6
+Working Set: 1 | 25 | 33 | 22 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 5
+Working Set: 27 | 44 | 42 | 25 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 4
+Working Set: 28 | 22 | 10 | 38 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 3
+Working Set: 17 | 11 | 38 | 0 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 2
+Working Set: 19 | 31 | 0 | 0 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 1
+Working Set: 42 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 1.3  [F2]: 1.7  [F3]: 2.30  [F4]: 1.21  [F5]: 2.45  [F6]: 3.50  [F7]: 1.31  [F8]: 2.5  [F9]: 3.23  [F10]: 4.29  [F11]: 2.6  [F12]: 3.21  [F13]: 5.38  [F14]: 3.38  [F15]: 4.20  [F16]: 5.50  [F17]: 6.30  [F18]: 4.36  [F19]: 5.44  [F20]: 6.4  [F21]: 7.42  [F22]: 4.2  [F23]: 5.7  [F24]: 6.2  [F25]: 7.24  [F26]: 8.40  [F27]: 6.45  [F28]: 7.43  [F29]: 8.2  [F30]: 9.47  [F31]: 7.29  [F32]: 8.39  [F33]: 9.46  [F34]: 10.1  [F35]: 8.44  [F36]: 9.32  [F37]: 10.38  [F38]: 11.14  [F39]: 9.19  [F40]: 10.14  [F41]: 11.8  [F42]: 12.33  [F43]: 10.32  [F44]: 11.15  [F45]: 12.22  [F46]: 13.25  [F47]: 11.29  [F48]: 12.1  [F49]: 13.27  [F50]: 14.28  [F51]: 12.25  [F52]: 13.44  [F53]: 14.22  [F54]: 15.17  [F55]: 13.42  [F56]: 14.10  [F57]: 15.11  [F58]: 16.19  [F59]: 14.38  [F60]: 15.38  [F61]: 16.31  [F62]: 17.42  
+-----------------------------------------
+Processos na memoria swap:
+
+
+================= INSTANTE DE TEMPO: 51 ============== 
+Processo #18 foi criado
+
+Processo #1 faz requisicao da pagina #13.
+Pagetable do processo #1
+Frame #2: Page #7
+Frame #1: Page #13
+Frame #4: Page #21
+Frame #7: Page #31
+-----------------------------------------
+Processo #2 faz requisicao da pagina #19.
+Pagetable do processo #2
+Frame #8: Page #5
+Frame #11: Page #6
+Frame #3: Page #19
+Frame #5: Page #45
+-----------------------------------------
+Processo #3 faz requisicao da pagina #38.
+Pagetable do processo #3
+Frame #12: Page #21
+Frame #9: Page #23
+Frame #14: Page #38
+Frame #6: Page #50
+-----------------------------------------
+Processo #4 faz requisicao da pagina #16.
+Pagetable do processo #4
+Frame #22: Page #2
+Frame #10: Page #16
+Frame #15: Page #20
+Frame #18: Page #36
+-----------------------------------------
+Processo #5 faz requisicao da pagina #44.
+Pagetable do processo #5
+Frame #23: Page #7
+Frame #13: Page #38
+Frame #19: Page #44
+Frame #16: Page #50
+-----------------------------------------
+Processo #6 faz requisicao da pagina #27.
+Pagetable do processo #6
+Frame #24: Page #2
+Frame #20: Page #4
+Frame #27: Page #27
+Frame #17: Page #30
+-----------------------------------------
+Processo #7 faz requisicao da pagina #49.
+Pagetable do processo #7
+Frame #25: Page #24
+Frame #21: Page #42
+Frame #28: Page #43
+Frame #31: Page #49
+-----------------------------------------
+Processo #8 faz requisicao da pagina #7.
+Pagetable do processo #8
+Frame #29: Page #2
+Frame #32: Page #7
+Frame #26: Page #40
+Frame #35: Page #44
+-----------------------------------------
+Processo #9 faz requisicao da pagina #37.
+Pagetable do processo #9
+Frame #36: Page #32
+Frame #39: Page #37
+Frame #33: Page #46
+Frame #30: Page #47
+-----------------------------------------
+Processo #10 faz requisicao da pagina #31.
+Pagetable do processo #10
+Frame #40: Page #14
+Frame #34: Page #31
+Frame #43: Page #32
+Frame #37: Page #38
+-----------------------------------------
+Processo #11 faz requisicao da pagina #49.
+Pagetable do processo #11
+Frame #41: Page #8
+Frame #38: Page #14
+Frame #44: Page #15
+Frame #47: Page #49
+-----------------------------------------
+Processo #12 faz requisicao da pagina #48.
+Pagetable do processo #12
+Frame #45: Page #22
+Frame #51: Page #25
+Frame #42: Page #33
+Frame #48: Page #48
+-----------------------------------------
+Processo #13 faz requisicao da pagina #42.
+Pagetable do processo #13
+Frame #46: Page #25
+Frame #49: Page #27
+Frame #55: Page #42
+Frame #52: Page #44
+-----------------------------------------
+Processo #14 faz requisicao da pagina #19.
+Pagetable do processo #14
+Frame #56: Page #10
+Frame #50: Page #19
+Frame #53: Page #22
+Frame #59: Page #38
+-----------------------------------------
+Processo #15 faz requisicao da pagina #28.
+Pagetable do processo #15
+Frame #57: Page #11
+Frame #54: Page #17
+Frame #63: Page #28
+Frame #60: Page #38
+-----------------------------------------
+Processo #16 faz requisicao da pagina #49.
+Pagetable do processo #16
+Frame #58: Page #19
+Frame #61: Page #31
+Frame #64: Page #49
+-----------------------------------------
+Processo #17 faz requisicao da pagina #39.
+Todas as frames estao ocupadas.
+Processo #1 foi escolhido para ser enviado a memoria swap.
+Pagetable do processo #17
+Frame #1: Page #39
+Frame #62: Page #42
+-----------------------------------------
+Processo #18 faz requisicao da pagina #30.
+Processo #18 foi pego da memoria swap.
+Pagetable do processo #18
+Frame #2: Page #30
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 2
+Requests Done: 17
+Working Set: 45 | 5 | 6 | 19 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 16
+Working Set: 50 | 23 | 21 | 38 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 15
+Working Set: 20 | 36 | 2 | 16 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 14
+Working Set: 38 | 50 | 7 | 44 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 13
+Working Set: 30 | 4 | 2 | 27 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 12
+Working Set: 42 | 24 | 43 | 49 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 11
+Working Set: 44 | 40 | 2 | 7 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 10
+Working Set: 46 | 32 | 47 | 37 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 9
+Working Set: 38 | 14 | 32 | 31 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 8
+Working Set: 14 | 8 | 15 | 49 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 7
+Working Set: 25 | 33 | 22 | 48 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 6
+Working Set: 27 | 44 | 25 | 42 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 5
+Working Set: 22 | 10 | 38 | 19 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 4
+Working Set: 17 | 11 | 38 | 28 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 3
+Working Set: 19 | 31 | 49 | 0 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 2
+Working Set: 42 | 39 | 0 | 0 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 1
+Working Set: 30 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 17.39  [F2]: 18.30  [F3]: 2.19  [F5]: 2.45  [F6]: 3.50  [F8]: 2.5  [F9]: 3.23  [F10]: 4.16  [F11]: 2.6  [F12]: 3.21  [F13]: 5.38  [F14]: 3.38  [F15]: 4.20  [F16]: 5.50  [F17]: 6.30  [F18]: 4.36  [F19]: 5.44  [F20]: 6.4  [F21]: 7.42  [F22]: 4.2  [F23]: 5.7  [F24]: 6.2  [F25]: 7.24  [F26]: 8.40  [F27]: 6.27  [F28]: 7.43  [F29]: 8.2  [F30]: 9.47  [F31]: 7.49  [F32]: 8.7  [F33]: 9.46  [F34]: 10.31  [F35]: 8.44  [F36]: 9.32  [F37]: 10.38  [F38]: 11.14  [F39]: 9.37  [F40]: 10.14  [F41]: 11.8  [F42]: 12.33  [F43]: 10.32  [F44]: 11.15  [F45]: 12.22  [F46]: 13.25  [F47]: 11.49  [F48]: 12.48  [F49]: 13.27  [F50]: 14.19  [F51]: 12.25  [F52]: 13.44  [F53]: 14.22  [F54]: 15.17  [F55]: 13.42  [F56]: 14.10  [F57]: 15.11  [F58]: 16.19  [F59]: 14.38  [F60]: 15.38  [F61]: 16.31  [F62]: 17.42  [F63]: 15.28  [F64]: 16.49  
+-----------------------------------------
+Processos na memoria swap:
+Process ID: 1
+Requests Done: 18
 Working Set: 0 | 0 | 0 | 0 | 
 -----------------------------------------
 
------------------------------------------
-Process #1 has been terminated
 
+================= INSTANTE DE TEMPO: 54 ============== 
+Processo #19 foi criado
 
-================= CURRENT TIME UNIT: 12 ============== 
-Process #2 makes Page #8 request
-Pagetable
-Frame #3: Page #2
-Frame #7: Page #4
-Frame #5: Page #5
-Frame #2: Page #8
------------------------------------------
-Process #3 makes Page #7 request
-Pagetable
+Processo #2 faz requisicao da pagina #7.
+Pagetable do processo #2
 Frame #8: Page #5
-Frame #6: Page #7
+Frame #11: Page #6
+Frame #5: Page #7
+Frame #3: Page #19
 -----------------------------------------
-Process #4 makes Page #5 request
-Pagetable
-Frame #4: Page #5
+Processo #3 faz requisicao da pagina #41.
+Pagetable do processo #3
+Frame #12: Page #21
+Frame #9: Page #23
+Frame #14: Page #38
+Frame #6: Page #41
 -----------------------------------------
-Processes:
-Process ID: 2
-Requests Done: 4
-Working Set: 2 | 5 | 4 | 8 | 
+Processo #4 faz requisicao da pagina #24.
+Pagetable do processo #4
+Frame #22: Page #2
+Frame #10: Page #16
+Frame #15: Page #24
+Frame #18: Page #36
 -----------------------------------------
+Processo #5 faz requisicao da pagina #8.
+Pagetable do processo #5
+Frame #23: Page #7
+Frame #13: Page #8
+Frame #19: Page #44
+Frame #16: Page #50
+-----------------------------------------
+Processo #6 faz requisicao da pagina #37.
+Pagetable do processo #6
+Frame #24: Page #2
+Frame #20: Page #4
+Frame #27: Page #27
+Frame #17: Page #37
+-----------------------------------------
+Processo #7 faz requisicao da pagina #6.
+Pagetable do processo #7
+Frame #21: Page #6
+Frame #25: Page #24
+Frame #28: Page #43
+Frame #31: Page #49
+-----------------------------------------
+Processo #8 faz requisicao da pagina #25.
+Pagetable do processo #8
+Frame #29: Page #2
+Frame #32: Page #7
+Frame #35: Page #25
+Frame #26: Page #40
+-----------------------------------------
+Processo #9 faz requisicao da pagina #10.
+Pagetable do processo #9
+Frame #33: Page #10
+Frame #36: Page #32
+Frame #39: Page #37
+Frame #30: Page #47
+-----------------------------------------
+Processo #10 faz requisicao da pagina #32.
+Pagetable do processo #10
+Frame #40: Page #14
+Frame #34: Page #31
+Frame #43: Page #32
+Frame #37: Page #38
+-----------------------------------------
+Processo #11 faz requisicao da pagina #12.
+Pagetable do processo #11
+Frame #41: Page #8
+Frame #38: Page #12
+Frame #44: Page #15
+Frame #47: Page #49
+-----------------------------------------
+Processo #12 faz requisicao da pagina #48.
+Pagetable do processo #12
+Frame #45: Page #22
+Frame #51: Page #25
+Frame #42: Page #33
+Frame #48: Page #48
+-----------------------------------------
+Processo #13 faz requisicao da pagina #13.
+Pagetable do processo #13
+Frame #49: Page #13
+Frame #46: Page #25
+Frame #55: Page #42
+Frame #52: Page #44
+-----------------------------------------
+Processo #14 faz requisicao da pagina #6.
+Pagetable do processo #14
+Frame #53: Page #6
+Frame #56: Page #10
+Frame #50: Page #19
+Frame #59: Page #38
+-----------------------------------------
+Processo #15 faz requisicao da pagina #10.
+Pagetable do processo #15
+Frame #54: Page #10
+Frame #57: Page #11
+Frame #63: Page #28
+Frame #60: Page #38
+-----------------------------------------
+Processo #16 faz requisicao da pagina #33.
+Pagetable do processo #16
+Frame #58: Page #19
+Frame #61: Page #31
+Frame #4: Page #33
+Frame #64: Page #49
+-----------------------------------------
+Processo #17 faz requisicao da pagina #43.
+Pagetable do processo #17
+Frame #1: Page #39
+Frame #62: Page #42
+Frame #7: Page #43
+-----------------------------------------
+Processo #18 faz requisicao da pagina #25.
+Todas as frames estao ocupadas.
+Processo #2 foi escolhido para ser enviado a memoria swap.
+Pagetable do processo #18
+Frame #3: Page #25
+Frame #2: Page #30
+-----------------------------------------
+Processo #1 faz requisicao da pagina #26.
+Processo #1 foi pego da memoria swap.
+Pagetable do processo #1
+Frame #5: Page #26
+-----------------------------------------
+Processo #19 faz requisicao da pagina #19.
+Processo #19 foi pego da memoria swap.
+Pagetable do processo #19
+Frame #8: Page #19
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
 Process ID: 3
-Requests Done: 3
-Working Set: 5 | 7 | 0 | 0 | 
+Requests Done: 17
+Working Set: 23 | 21 | 38 | 41 | 
 -----------------------------------------
 Process ID: 4
+Requests Done: 16
+Working Set: 36 | 2 | 16 | 24 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 15
+Working Set: 50 | 7 | 44 | 8 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 14
+Working Set: 4 | 2 | 27 | 37 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 13
+Working Set: 24 | 43 | 49 | 6 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 12
+Working Set: 40 | 2 | 7 | 25 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 11
+Working Set: 32 | 47 | 37 | 10 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 10
+Working Set: 38 | 14 | 31 | 32 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 9
+Working Set: 8 | 15 | 49 | 12 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 8
+Working Set: 25 | 33 | 22 | 48 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 7
+Working Set: 44 | 25 | 42 | 13 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 6
+Working Set: 10 | 38 | 19 | 6 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 5
+Working Set: 11 | 38 | 28 | 10 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 4
+Working Set: 19 | 31 | 49 | 33 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 3
+Working Set: 42 | 39 | 43 | 0 | 
+-----------------------------------------
+Process ID: 18
 Requests Done: 2
-Working Set: 7 | 5 | 0 | 0 | 
+Working Set: 30 | 25 | 0 | 0 | 
 -----------------------------------------
-Virtual Memory:
-[1]: 7(4)  [2]: 8(2)  [3]: 2(2)  [4]: 5(4)  [5]: 5(2)  [6]: 7(3)  [7]: 4(2)  [8]: 5(3)  
+Process ID: 1
+Requests Done: 19
+Working Set: 26 | 0 | 0 | 0 | 
 -----------------------------------------
-SWAP:
+Process ID: 19
+Requests Done: 1
+Working Set: 19 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 17.39  [F2]: 18.30  [F3]: 18.25  [F4]: 16.33  [F5]: 1.26  [F6]: 3.41  [F7]: 17.43  [F8]: 19.19  [F9]: 3.23  [F10]: 4.16  [F12]: 3.21  [F13]: 5.8  [F14]: 3.38  [F15]: 4.24  [F16]: 5.50  [F17]: 6.37  [F18]: 4.36  [F19]: 5.44  [F20]: 6.4  [F21]: 7.6  [F22]: 4.2  [F23]: 5.7  [F24]: 6.2  [F25]: 7.24  [F26]: 8.40  [F27]: 6.27  [F28]: 7.43  [F29]: 8.2  [F30]: 9.47  [F31]: 7.49  [F32]: 8.7  [F33]: 9.10  [F34]: 10.31  [F35]: 8.25  [F36]: 9.32  [F37]: 10.38  [F38]: 11.12  [F39]: 9.37  [F40]: 10.14  [F41]: 11.8  [F42]: 12.33  [F43]: 10.32  [F44]: 11.15  [F45]: 12.22  [F46]: 13.25  [F47]: 11.49  [F48]: 12.48  [F49]: 13.13  [F50]: 14.19  [F51]: 12.25  [F52]: 13.44  [F53]: 14.6  [F54]: 15.10  [F55]: 13.42  [F56]: 14.10  [F57]: 15.11  [F58]: 16.19  [F59]: 14.38  [F60]: 15.38  [F61]: 16.31  [F62]: 17.42  [F63]: 15.28  [F64]: 16.49  
+-----------------------------------------
+Processos na memoria swap:
+Process ID: 2
+Requests Done: 18
+Working Set: 0 | 0 | 0 | 0 | 
+-----------------------------------------
 
------------------------------------------
-Process #2 has been terminated
 
+================= INSTANTE DE TEMPO: 57 ============== 
+Processo #20 foi criado
 
-================= CURRENT TIME UNIT: 15 ============== 
-Process #3 makes Page #7 request
-Pagetable
-Frame #8: Page #5
-Frame #6: Page #7
+Processo #3 faz requisicao da pagina #25.
+Pagetable do processo #3
+Frame #12: Page #21
+Frame #9: Page #25
+Frame #14: Page #38
+Frame #6: Page #41
 -----------------------------------------
-Process #4 makes Page #6 request
-Pagetable
-Frame #4: Page #5
-Frame #2: Page #6
+Processo #4 faz requisicao da pagina #32.
+Pagetable do processo #4
+Frame #22: Page #2
+Frame #10: Page #16
+Frame #15: Page #24
+Frame #18: Page #32
 -----------------------------------------
-Processes:
-Process ID: 3
-Requests Done: 4
-Working Set: 5 | 7 | 0 | 0 | 
+Processo #5 faz requisicao da pagina #7.
+Pagetable do processo #5
+Frame #23: Page #7
+Frame #13: Page #8
+Frame #19: Page #44
+Frame #16: Page #50
 -----------------------------------------
+Processo #6 faz requisicao da pagina #6.
+Pagetable do processo #6
+Frame #24: Page #2
+Frame #20: Page #6
+Frame #27: Page #27
+Frame #17: Page #37
+-----------------------------------------
+Processo #7 faz requisicao da pagina #32.
+Pagetable do processo #7
+Frame #21: Page #6
+Frame #25: Page #32
+Frame #28: Page #43
+Frame #31: Page #49
+-----------------------------------------
+Processo #8 faz requisicao da pagina #5.
+Pagetable do processo #8
+Frame #29: Page #2
+Frame #26: Page #5
+Frame #32: Page #7
+Frame #35: Page #25
+-----------------------------------------
+Processo #9 faz requisicao da pagina #49.
+Pagetable do processo #9
+Frame #33: Page #10
+Frame #39: Page #37
+Frame #30: Page #47
+Frame #36: Page #49
+-----------------------------------------
+Processo #10 faz requisicao da pagina #1.
+Pagetable do processo #10
+Frame #37: Page #1
+Frame #40: Page #14
+Frame #34: Page #31
+Frame #43: Page #32
+-----------------------------------------
+Processo #11 faz requisicao da pagina #32.
+Pagetable do processo #11
+Frame #38: Page #12
+Frame #44: Page #15
+Frame #41: Page #32
+Frame #47: Page #49
+-----------------------------------------
+Processo #12 faz requisicao da pagina #49.
+Pagetable do processo #12
+Frame #45: Page #22
+Frame #42: Page #33
+Frame #48: Page #48
+Frame #51: Page #49
+-----------------------------------------
+Processo #13 faz requisicao da pagina #41.
+Pagetable do processo #13
+Frame #49: Page #13
+Frame #46: Page #25
+Frame #52: Page #41
+Frame #55: Page #42
+-----------------------------------------
+Processo #14 faz requisicao da pagina #13.
+Pagetable do processo #14
+Frame #53: Page #6
+Frame #56: Page #13
+Frame #50: Page #19
+Frame #59: Page #38
+-----------------------------------------
+Processo #15 faz requisicao da pagina #7.
+Pagetable do processo #15
+Frame #57: Page #7
+Frame #54: Page #10
+Frame #63: Page #28
+Frame #60: Page #38
+-----------------------------------------
+Processo #16 faz requisicao da pagina #33.
+Pagetable do processo #16
+Frame #58: Page #19
+Frame #61: Page #31
+Frame #4: Page #33
+Frame #64: Page #49
+-----------------------------------------
+Processo #17 faz requisicao da pagina #39.
+Pagetable do processo #17
+Frame #1: Page #39
+Frame #62: Page #42
+Frame #7: Page #43
+-----------------------------------------
+Processo #18 faz requisicao da pagina #14.
+Pagetable do processo #18
+Frame #11: Page #14
+Frame #3: Page #25
+Frame #2: Page #30
+-----------------------------------------
+Processo #1 faz requisicao da pagina #20.
+Todas as frames estao ocupadas.
+Processo #3 foi escolhido para ser enviado a memoria swap.
+Pagetable do processo #1
+Frame #6: Page #20
+Frame #5: Page #26
+-----------------------------------------
+Processo #19 faz requisicao da pagina #46.
+Pagetable do processo #19
+Frame #8: Page #19
+Frame #9: Page #46
+-----------------------------------------
+Processo #2 faz requisicao da pagina #40.
+Processo #2 foi pego da memoria swap.
+Pagetable do processo #2
+Frame #12: Page #40
+-----------------------------------------
+Processo #20 faz requisicao da pagina #29.
+Processo #20 foi pego da memoria swap.
+Pagetable do processo #20
+Frame #14: Page #29
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
 Process ID: 4
+Requests Done: 17
+Working Set: 2 | 16 | 24 | 32 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 16
+Working Set: 50 | 44 | 8 | 7 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 15
+Working Set: 2 | 27 | 37 | 6 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 14
+Working Set: 43 | 49 | 6 | 32 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 13
+Working Set: 2 | 7 | 25 | 5 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 12
+Working Set: 47 | 37 | 10 | 49 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 11
+Working Set: 14 | 31 | 32 | 1 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 10
+Working Set: 15 | 49 | 12 | 32 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 9
+Working Set: 33 | 22 | 48 | 49 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 8
+Working Set: 25 | 42 | 13 | 41 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 7
+Working Set: 38 | 19 | 6 | 13 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 6
+Working Set: 38 | 28 | 10 | 7 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 5
+Working Set: 19 | 31 | 49 | 33 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 4
+Working Set: 42 | 43 | 39 | 0 | 
+-----------------------------------------
+Process ID: 18
 Requests Done: 3
-Working Set: 7 | 5 | 6 | 0 | 
+Working Set: 30 | 25 | 14 | 0 | 
 -----------------------------------------
-Virtual Memory:
-[1]: 7(4)  [2]: 6(4)  [4]: 5(4)  [6]: 7(3)  [8]: 5(3)  
+Process ID: 1
+Requests Done: 20
+Working Set: 26 | 20 | 0 | 0 | 
 -----------------------------------------
-SWAP:
+Process ID: 19
+Requests Done: 2
+Working Set: 19 | 46 | 0 | 0 | 
+-----------------------------------------
+Process ID: 2
+Requests Done: 19
+Working Set: 40 | 0 | 0 | 0 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 1
+Working Set: 29 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 17.39  [F2]: 18.30  [F3]: 18.25  [F4]: 16.33  [F5]: 1.26  [F6]: 1.20  [F7]: 17.43  [F8]: 19.19  [F9]: 19.46  [F10]: 4.16  [F11]: 18.14  [F12]: 2.40  [F13]: 5.8  [F14]: 20.29  [F15]: 4.24  [F16]: 5.50  [F17]: 6.37  [F18]: 4.32  [F19]: 5.44  [F20]: 6.6  [F21]: 7.6  [F22]: 4.2  [F23]: 5.7  [F24]: 6.2  [F25]: 7.32  [F26]: 8.5  [F27]: 6.27  [F28]: 7.43  [F29]: 8.2  [F30]: 9.47  [F31]: 7.49  [F32]: 8.7  [F33]: 9.10  [F34]: 10.31  [F35]: 8.25  [F36]: 9.49  [F37]: 10.1  [F38]: 11.12  [F39]: 9.37  [F40]: 10.14  [F41]: 11.32  [F42]: 12.33  [F43]: 10.32  [F44]: 11.15  [F45]: 12.22  [F46]: 13.25  [F47]: 11.49  [F48]: 12.48  [F49]: 13.13  [F50]: 14.19  [F51]: 12.49  [F52]: 13.41  [F53]: 14.6  [F54]: 15.10  [F55]: 13.42  [F56]: 14.13  [F57]: 15.7  [F58]: 16.19  [F59]: 14.38  [F60]: 15.38  [F61]: 16.31  [F62]: 17.42  [F63]: 15.28  [F64]: 16.49  
+-----------------------------------------
+Processos na memoria swap:
+Process ID: 3
+Requests Done: 18
+Working Set: 0 | 0 | 0 | 0 | 
+-----------------------------------------
 
------------------------------------------
-Process #3 has been terminated
+Processo #1 foi terminado
 
 
-================= CURRENT TIME UNIT: 18 ============== 
-Process #4 makes Page #6 request
-Pagetable
-Frame #4: Page #5
-Frame #2: Page #6
+================= INSTANTE DE TEMPO: 60 ============== 
+Processo #4 faz requisicao da pagina #27.
+Pagetable do processo #4
+Frame #10: Page #16
+Frame #15: Page #24
+Frame #22: Page #27
+Frame #18: Page #32
 -----------------------------------------
-Processes:
-Process ID: 4
+Processo #5 faz requisicao da pagina #4.
+Pagetable do processo #5
+Frame #16: Page #4
+Frame #23: Page #7
+Frame #13: Page #8
+Frame #19: Page #44
+-----------------------------------------
+Processo #6 faz requisicao da pagina #28.
+Pagetable do processo #6
+Frame #20: Page #6
+Frame #27: Page #27
+Frame #24: Page #28
+Frame #17: Page #37
+-----------------------------------------
+Processo #7 faz requisicao da pagina #41.
+Pagetable do processo #7
+Frame #21: Page #6
+Frame #25: Page #32
+Frame #28: Page #41
+Frame #31: Page #49
+-----------------------------------------
+Processo #8 faz requisicao da pagina #9.
+Pagetable do processo #8
+Frame #26: Page #5
+Frame #32: Page #7
+Frame #29: Page #9
+Frame #35: Page #25
+-----------------------------------------
+Processo #9 faz requisicao da pagina #39.
+Pagetable do processo #9
+Frame #33: Page #10
+Frame #39: Page #37
+Frame #30: Page #39
+Frame #36: Page #49
+-----------------------------------------
+Processo #10 faz requisicao da pagina #23.
+Pagetable do processo #10
+Frame #37: Page #1
+Frame #40: Page #23
+Frame #34: Page #31
+Frame #43: Page #32
+-----------------------------------------
+Processo #11 faz requisicao da pagina #3.
+Pagetable do processo #11
+Frame #44: Page #3
+Frame #38: Page #12
+Frame #41: Page #32
+Frame #47: Page #49
+-----------------------------------------
+Processo #12 faz requisicao da pagina #15.
+Pagetable do processo #12
+Frame #42: Page #15
+Frame #45: Page #22
+Frame #48: Page #48
+Frame #51: Page #49
+-----------------------------------------
+Processo #13 faz requisicao da pagina #48.
+Pagetable do processo #13
+Frame #49: Page #13
+Frame #52: Page #41
+Frame #55: Page #42
+Frame #46: Page #48
+-----------------------------------------
+Processo #14 faz requisicao da pagina #21.
+Pagetable do processo #14
+Frame #53: Page #6
+Frame #56: Page #13
+Frame #50: Page #19
+Frame #59: Page #21
+-----------------------------------------
+Processo #15 faz requisicao da pagina #40.
+Pagetable do processo #15
+Frame #57: Page #7
+Frame #54: Page #10
+Frame #63: Page #28
+Frame #60: Page #40
+-----------------------------------------
+Processo #16 faz requisicao da pagina #32.
+Pagetable do processo #16
+Frame #61: Page #31
+Frame #58: Page #32
+Frame #4: Page #33
+Frame #64: Page #49
+-----------------------------------------
+Processo #17 faz requisicao da pagina #30.
+Pagetable do processo #17
+Frame #5: Page #30
+Frame #1: Page #39
+Frame #62: Page #42
+Frame #7: Page #43
+-----------------------------------------
+Processo #18 faz requisicao da pagina #47.
+Pagetable do processo #18
+Frame #11: Page #14
+Frame #3: Page #25
+Frame #2: Page #30
+Frame #6: Page #47
+-----------------------------------------
+Processo #19 faz requisicao da pagina #13.
+Todas as frames estao ocupadas.
+Processo #4 foi escolhido para ser enviado a memoria swap.
+Pagetable do processo #19
+Frame #10: Page #13
+Frame #8: Page #19
+Frame #9: Page #46
+-----------------------------------------
+Processo #2 faz requisicao da pagina #34.
+Pagetable do processo #2
+Frame #15: Page #34
+Frame #12: Page #40
+-----------------------------------------
+Processo #20 faz requisicao da pagina #47.
+Pagetable do processo #20
+Frame #14: Page #29
+Frame #18: Page #47
+-----------------------------------------
+Processo #3 faz requisicao da pagina #15.
+Processo #3 foi pego da memoria swap.
+Pagetable do processo #3
+Frame #22: Page #15
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 5
+Requests Done: 17
+Working Set: 44 | 8 | 7 | 4 | 
+-----------------------------------------
+Process ID: 6
+Requests Done: 16
+Working Set: 27 | 37 | 6 | 28 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 15
+Working Set: 49 | 6 | 32 | 41 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 14
+Working Set: 7 | 25 | 5 | 9 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 13
+Working Set: 37 | 10 | 49 | 39 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 12
+Working Set: 31 | 32 | 1 | 23 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 11
+Working Set: 49 | 12 | 32 | 3 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 10
+Working Set: 22 | 48 | 49 | 15 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 9
+Working Set: 42 | 13 | 41 | 48 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 8
+Working Set: 19 | 6 | 13 | 21 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 7
+Working Set: 28 | 10 | 7 | 40 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 6
+Working Set: 31 | 49 | 33 | 32 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 5
+Working Set: 42 | 43 | 39 | 30 | 
+-----------------------------------------
+Process ID: 18
 Requests Done: 4
-Working Set: 7 | 5 | 6 | 0 | 
+Working Set: 30 | 25 | 14 | 47 | 
 -----------------------------------------
-Virtual Memory:
-[1]: 7(4)  [2]: 6(4)  [4]: 5(4)  
+Process ID: 19
+Requests Done: 3
+Working Set: 19 | 46 | 13 | 0 | 
 -----------------------------------------
-SWAP:
+Process ID: 2
+Requests Done: 20
+Working Set: 40 | 34 | 0 | 0 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 2
+Working Set: 29 | 47 | 0 | 0 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 19
+Working Set: 15 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 17.39  [F2]: 18.30  [F3]: 18.25  [F4]: 16.33  [F5]: 17.30  [F6]: 18.47  [F7]: 17.43  [F8]: 19.19  [F9]: 19.46  [F10]: 19.13  [F11]: 18.14  [F12]: 2.40  [F13]: 5.8  [F14]: 20.29  [F15]: 2.34  [F16]: 5.4  [F17]: 6.37  [F18]: 20.47  [F19]: 5.44  [F20]: 6.6  [F21]: 7.6  [F22]: 3.15  [F23]: 5.7  [F24]: 6.28  [F25]: 7.32  [F26]: 8.5  [F27]: 6.27  [F28]: 7.41  [F29]: 8.9  [F30]: 9.39  [F31]: 7.49  [F32]: 8.7  [F33]: 9.10  [F34]: 10.31  [F35]: 8.25  [F36]: 9.49  [F37]: 10.1  [F38]: 11.12  [F39]: 9.37  [F40]: 10.23  [F41]: 11.32  [F42]: 12.15  [F43]: 10.32  [F44]: 11.3  [F45]: 12.22  [F46]: 13.48  [F47]: 11.49  [F48]: 12.48  [F49]: 13.13  [F50]: 14.19  [F51]: 12.49  [F52]: 13.41  [F53]: 14.6  [F54]: 15.10  [F55]: 13.42  [F56]: 14.13  [F57]: 15.7  [F58]: 16.32  [F59]: 14.21  [F60]: 15.40  [F61]: 16.31  [F62]: 17.42  [F63]: 15.28  [F64]: 16.49  
+-----------------------------------------
+Processos na memoria swap:
+Process ID: 4
+Requests Done: 18
+Working Set: 0 | 0 | 0 | 0 | 
+-----------------------------------------
 
+Processo #2 foi terminado
+
+
+================= INSTANTE DE TEMPO: 63 ============== 
+Processo #5 faz requisicao da pagina #17.
+Pagetable do processo #5
+Frame #16: Page #4
+Frame #23: Page #7
+Frame #13: Page #8
+Frame #19: Page #17
 -----------------------------------------
-Process #4 has been terminated
+Processo #6 faz requisicao da pagina #45.
+Pagetable do processo #6
+Frame #20: Page #6
+Frame #24: Page #28
+Frame #17: Page #37
+Frame #27: Page #45
+-----------------------------------------
+Processo #7 faz requisicao da pagina #6.
+Pagetable do processo #7
+Frame #21: Page #6
+Frame #25: Page #32
+Frame #28: Page #41
+Frame #31: Page #49
+-----------------------------------------
+Processo #8 faz requisicao da pagina #32.
+Pagetable do processo #8
+Frame #26: Page #5
+Frame #29: Page #9
+Frame #35: Page #25
+Frame #32: Page #32
+-----------------------------------------
+Processo #9 faz requisicao da pagina #1.
+Pagetable do processo #9
+Frame #39: Page #1
+Frame #33: Page #10
+Frame #30: Page #39
+Frame #36: Page #49
+-----------------------------------------
+Processo #10 faz requisicao da pagina #38.
+Pagetable do processo #10
+Frame #37: Page #1
+Frame #40: Page #23
+Frame #43: Page #32
+Frame #34: Page #38
+-----------------------------------------
+Processo #11 faz requisicao da pagina #20.
+Pagetable do processo #11
+Frame #44: Page #3
+Frame #38: Page #12
+Frame #47: Page #20
+Frame #41: Page #32
+-----------------------------------------
+Processo #12 faz requisicao da pagina #16.
+Pagetable do processo #12
+Frame #42: Page #15
+Frame #45: Page #16
+Frame #48: Page #48
+Frame #51: Page #49
+-----------------------------------------
+Processo #13 faz requisicao da pagina #9.
+Pagetable do processo #13
+Frame #55: Page #9
+Frame #49: Page #13
+Frame #52: Page #41
+Frame #46: Page #48
+-----------------------------------------
+Processo #14 faz requisicao da pagina #15.
+Pagetable do processo #14
+Frame #53: Page #6
+Frame #56: Page #13
+Frame #50: Page #15
+Frame #59: Page #21
+-----------------------------------------
+Processo #15 faz requisicao da pagina #8.
+Pagetable do processo #15
+Frame #57: Page #7
+Frame #63: Page #8
+Frame #54: Page #10
+Frame #60: Page #40
+-----------------------------------------
+Processo #16 faz requisicao da pagina #40.
+Pagetable do processo #16
+Frame #58: Page #32
+Frame #4: Page #33
+Frame #61: Page #40
+Frame #64: Page #49
+-----------------------------------------
+Processo #17 faz requisicao da pagina #43.
+Pagetable do processo #17
+Frame #5: Page #30
+Frame #1: Page #39
+Frame #62: Page #42
+Frame #7: Page #43
+-----------------------------------------
+Processo #18 faz requisicao da pagina #11.
+Pagetable do processo #18
+Frame #2: Page #11
+Frame #11: Page #14
+Frame #3: Page #25
+Frame #6: Page #47
+-----------------------------------------
+Processo #19 faz requisicao da pagina #19.
+Pagetable do processo #19
+Frame #10: Page #13
+Frame #8: Page #19
+Frame #9: Page #46
+-----------------------------------------
+Processo #20 faz requisicao da pagina #34.
+Pagetable do processo #20
+Frame #14: Page #29
+Frame #12: Page #34
+Frame #18: Page #47
+-----------------------------------------
+Processo #3 faz requisicao da pagina #19.
+Pagetable do processo #3
+Frame #22: Page #15
+Frame #15: Page #19
+-----------------------------------------
+Processo #4 faz requisicao da pagina #8.
+Todas as frames estao ocupadas.
+Processo #5 foi escolhido para ser enviado a memoria swap.
+Processo #4 foi pego da memoria swap.
+Pagetable do processo #4
+Frame #13: Page #8
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 6
+Requests Done: 17
+Working Set: 37 | 6 | 28 | 45 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 16
+Working Set: 49 | 32 | 41 | 6 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 15
+Working Set: 25 | 5 | 9 | 32 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 14
+Working Set: 10 | 49 | 39 | 1 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 13
+Working Set: 32 | 1 | 23 | 38 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 12
+Working Set: 12 | 32 | 3 | 20 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 11
+Working Set: 48 | 49 | 15 | 16 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 10
+Working Set: 13 | 41 | 48 | 9 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 9
+Working Set: 6 | 13 | 21 | 15 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 8
+Working Set: 10 | 7 | 40 | 8 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 7
+Working Set: 49 | 33 | 32 | 40 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 6
+Working Set: 42 | 39 | 30 | 43 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 5
+Working Set: 25 | 14 | 47 | 11 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 4
+Working Set: 46 | 13 | 19 | 0 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 3
+Working Set: 29 | 47 | 34 | 0 | 
+-----------------------------------------
+Process ID: 3
+Requests Done: 20
+Working Set: 15 | 19 | 0 | 0 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 19
+Working Set: 8 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 17.39  [F2]: 18.11  [F3]: 18.25  [F4]: 16.33  [F5]: 17.30  [F6]: 18.47  [F7]: 17.43  [F8]: 19.19  [F9]: 19.46  [F10]: 19.13  [F11]: 18.14  [F12]: 20.34  [F13]: 4.8  [F14]: 20.29  [F15]: 3.19  [F17]: 6.37  [F18]: 20.47  [F20]: 6.6  [F21]: 7.6  [F22]: 3.15  [F24]: 6.28  [F25]: 7.32  [F26]: 8.5  [F27]: 6.45  [F28]: 7.41  [F29]: 8.9  [F30]: 9.39  [F31]: 7.49  [F32]: 8.32  [F33]: 9.10  [F34]: 10.38  [F35]: 8.25  [F36]: 9.49  [F37]: 10.1  [F38]: 11.12  [F39]: 9.1  [F40]: 10.23  [F41]: 11.32  [F42]: 12.15  [F43]: 10.32  [F44]: 11.3  [F45]: 12.16  [F46]: 13.48  [F47]: 11.20  [F48]: 12.48  [F49]: 13.13  [F50]: 14.15  [F51]: 12.49  [F52]: 13.41  [F53]: 14.6  [F54]: 15.10  [F55]: 13.9  [F56]: 14.13  [F57]: 15.7  [F58]: 16.32  [F59]: 14.21  [F60]: 15.40  [F61]: 16.40  [F62]: 17.42  [F63]: 15.8  [F64]: 16.49  
+-----------------------------------------
+Processos na memoria swap:
+Process ID: 5
+Requests Done: 18
+Working Set: 0 | 0 | 0 | 0 | 
+-----------------------------------------
+
+Processo #3 foi terminado
+
+
+================= INSTANTE DE TEMPO: 66 ============== 
+Processo #6 faz requisicao da pagina #6.
+Pagetable do processo #6
+Frame #20: Page #6
+Frame #24: Page #28
+Frame #17: Page #37
+Frame #27: Page #45
+-----------------------------------------
+Processo #7 faz requisicao da pagina #21.
+Pagetable do processo #7
+Frame #21: Page #6
+Frame #31: Page #21
+Frame #25: Page #32
+Frame #28: Page #41
+-----------------------------------------
+Processo #8 faz requisicao da pagina #22.
+Pagetable do processo #8
+Frame #26: Page #5
+Frame #29: Page #9
+Frame #35: Page #22
+Frame #32: Page #32
+-----------------------------------------
+Processo #9 faz requisicao da pagina #4.
+Pagetable do processo #9
+Frame #39: Page #1
+Frame #33: Page #4
+Frame #30: Page #39
+Frame #36: Page #49
+-----------------------------------------
+Processo #10 faz requisicao da pagina #43.
+Pagetable do processo #10
+Frame #37: Page #1
+Frame #40: Page #23
+Frame #34: Page #38
+Frame #43: Page #43
+-----------------------------------------
+Processo #11 faz requisicao da pagina #13.
+Pagetable do processo #11
+Frame #44: Page #3
+Frame #38: Page #13
+Frame #47: Page #20
+Frame #41: Page #32
+-----------------------------------------
+Processo #12 faz requisicao da pagina #35.
+Pagetable do processo #12
+Frame #42: Page #15
+Frame #45: Page #16
+Frame #48: Page #35
+Frame #51: Page #49
+-----------------------------------------
+Processo #13 faz requisicao da pagina #22.
+Pagetable do processo #13
+Frame #55: Page #9
+Frame #49: Page #22
+Frame #52: Page #41
+Frame #46: Page #48
+-----------------------------------------
+Processo #14 faz requisicao da pagina #9.
+Pagetable do processo #14
+Frame #53: Page #9
+Frame #56: Page #13
+Frame #50: Page #15
+Frame #59: Page #21
+-----------------------------------------
+Processo #15 faz requisicao da pagina #49.
+Pagetable do processo #15
+Frame #57: Page #7
+Frame #63: Page #8
+Frame #60: Page #40
+Frame #54: Page #49
+-----------------------------------------
+Processo #16 faz requisicao da pagina #5.
+Pagetable do processo #16
+Frame #64: Page #5
+Frame #58: Page #32
+Frame #4: Page #33
+Frame #61: Page #40
+-----------------------------------------
+Processo #17 faz requisicao da pagina #5.
+Pagetable do processo #17
+Frame #62: Page #5
+Frame #5: Page #30
+Frame #1: Page #39
+Frame #7: Page #43
+-----------------------------------------
+Processo #18 faz requisicao da pagina #14.
+Pagetable do processo #18
+Frame #2: Page #11
+Frame #11: Page #14
+Frame #3: Page #25
+Frame #6: Page #47
+-----------------------------------------
+Processo #19 faz requisicao da pagina #24.
+Pagetable do processo #19
+Frame #10: Page #13
+Frame #8: Page #19
+Frame #15: Page #24
+Frame #9: Page #46
+-----------------------------------------
+Processo #20 faz requisicao da pagina #49.
+Pagetable do processo #20
+Frame #14: Page #29
+Frame #12: Page #34
+Frame #18: Page #47
+Frame #16: Page #49
+-----------------------------------------
+Processo #4 faz requisicao da pagina #19.
+Pagetable do processo #4
+Frame #13: Page #8
+Frame #19: Page #19
+-----------------------------------------
+Processo #5 faz requisicao da pagina #5.
+Processo #5 foi pego da memoria swap.
+Pagetable do processo #5
+Frame #22: Page #5
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 6
+Requests Done: 18
+Working Set: 37 | 28 | 45 | 6 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 17
+Working Set: 32 | 41 | 6 | 21 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 16
+Working Set: 5 | 9 | 32 | 22 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 15
+Working Set: 49 | 39 | 1 | 4 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 14
+Working Set: 1 | 23 | 38 | 43 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 13
+Working Set: 32 | 3 | 20 | 13 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 12
+Working Set: 49 | 15 | 16 | 35 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 11
+Working Set: 41 | 48 | 9 | 22 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 10
+Working Set: 13 | 21 | 15 | 9 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 9
+Working Set: 7 | 40 | 8 | 49 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 8
+Working Set: 33 | 32 | 40 | 5 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 7
+Working Set: 39 | 30 | 43 | 5 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 6
+Working Set: 25 | 47 | 11 | 14 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 5
+Working Set: 46 | 13 | 19 | 24 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 4
+Working Set: 29 | 47 | 34 | 49 | 
+-----------------------------------------
+Process ID: 4
+Requests Done: 20
+Working Set: 8 | 19 | 0 | 0 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 19
+Working Set: 5 | 0 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 17.39  [F2]: 18.11  [F3]: 18.25  [F4]: 16.33  [F5]: 17.30  [F6]: 18.47  [F7]: 17.43  [F8]: 19.19  [F9]: 19.46  [F10]: 19.13  [F11]: 18.14  [F12]: 20.34  [F13]: 4.8  [F14]: 20.29  [F15]: 19.24  [F16]: 20.49  [F17]: 6.37  [F18]: 20.47  [F19]: 4.19  [F20]: 6.6  [F21]: 7.6  [F22]: 5.5  [F24]: 6.28  [F25]: 7.32  [F26]: 8.5  [F27]: 6.45  [F28]: 7.41  [F29]: 8.9  [F30]: 9.39  [F31]: 7.21  [F32]: 8.32  [F33]: 9.4  [F34]: 10.38  [F35]: 8.22  [F36]: 9.49  [F37]: 10.1  [F38]: 11.13  [F39]: 9.1  [F40]: 10.23  [F41]: 11.32  [F42]: 12.15  [F43]: 10.43  [F44]: 11.3  [F45]: 12.16  [F46]: 13.48  [F47]: 11.20  [F48]: 12.35  [F49]: 13.22  [F50]: 14.15  [F51]: 12.49  [F52]: 13.41  [F53]: 14.9  [F54]: 15.49  [F55]: 13.9  [F56]: 14.13  [F57]: 15.7  [F58]: 16.32  [F59]: 14.21  [F60]: 15.40  [F61]: 16.40  [F62]: 17.5  [F63]: 15.8  [F64]: 16.5  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #4 foi terminado
+
+
+================= INSTANTE DE TEMPO: 69 ============== 
+Processo #6 faz requisicao da pagina #1.
+Pagetable do processo #6
+Frame #17: Page #1
+Frame #20: Page #6
+Frame #24: Page #28
+Frame #27: Page #45
+-----------------------------------------
+Processo #7 faz requisicao da pagina #8.
+Pagetable do processo #7
+Frame #21: Page #6
+Frame #25: Page #8
+Frame #31: Page #21
+Frame #28: Page #41
+-----------------------------------------
+Processo #8 faz requisicao da pagina #24.
+Pagetable do processo #8
+Frame #29: Page #9
+Frame #35: Page #22
+Frame #26: Page #24
+Frame #32: Page #32
+-----------------------------------------
+Processo #9 faz requisicao da pagina #19.
+Pagetable do processo #9
+Frame #39: Page #1
+Frame #33: Page #4
+Frame #36: Page #19
+Frame #30: Page #39
+-----------------------------------------
+Processo #10 faz requisicao da pagina #19.
+Pagetable do processo #10
+Frame #37: Page #19
+Frame #40: Page #23
+Frame #34: Page #38
+Frame #43: Page #43
+-----------------------------------------
+Processo #11 faz requisicao da pagina #40.
+Pagetable do processo #11
+Frame #44: Page #3
+Frame #38: Page #13
+Frame #47: Page #20
+Frame #41: Page #40
+-----------------------------------------
+Processo #12 faz requisicao da pagina #28.
+Pagetable do processo #12
+Frame #42: Page #15
+Frame #45: Page #16
+Frame #51: Page #28
+Frame #48: Page #35
+-----------------------------------------
+Processo #13 faz requisicao da pagina #10.
+Pagetable do processo #13
+Frame #55: Page #9
+Frame #52: Page #10
+Frame #49: Page #22
+Frame #46: Page #48
+-----------------------------------------
+Processo #14 faz requisicao da pagina #32.
+Pagetable do processo #14
+Frame #53: Page #9
+Frame #50: Page #15
+Frame #59: Page #21
+Frame #56: Page #32
+-----------------------------------------
+Processo #15 faz requisicao da pagina #38.
+Pagetable do processo #15
+Frame #63: Page #8
+Frame #57: Page #38
+Frame #60: Page #40
+Frame #54: Page #49
+-----------------------------------------
+Processo #16 faz requisicao da pagina #28.
+Pagetable do processo #16
+Frame #64: Page #5
+Frame #4: Page #28
+Frame #58: Page #32
+Frame #61: Page #40
+-----------------------------------------
+Processo #17 faz requisicao da pagina #15.
+Pagetable do processo #17
+Frame #62: Page #5
+Frame #1: Page #15
+Frame #5: Page #30
+Frame #7: Page #43
+-----------------------------------------
+Processo #18 faz requisicao da pagina #8.
+Pagetable do processo #18
+Frame #3: Page #8
+Frame #2: Page #11
+Frame #11: Page #14
+Frame #6: Page #47
+-----------------------------------------
+Processo #19 faz requisicao da pagina #35.
+Pagetable do processo #19
+Frame #10: Page #13
+Frame #8: Page #19
+Frame #15: Page #24
+Frame #9: Page #35
+-----------------------------------------
+Processo #20 faz requisicao da pagina #23.
+Pagetable do processo #20
+Frame #14: Page #23
+Frame #12: Page #34
+Frame #18: Page #47
+Frame #16: Page #49
+-----------------------------------------
+Processo #5 faz requisicao da pagina #30.
+Pagetable do processo #5
+Frame #22: Page #5
+Frame #13: Page #30
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 6
+Requests Done: 19
+Working Set: 28 | 45 | 6 | 1 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 18
+Working Set: 41 | 6 | 21 | 8 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 17
+Working Set: 9 | 32 | 22 | 24 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 16
+Working Set: 39 | 1 | 4 | 19 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 15
+Working Set: 23 | 38 | 43 | 19 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 14
+Working Set: 3 | 20 | 13 | 40 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 13
+Working Set: 15 | 16 | 35 | 28 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 12
+Working Set: 48 | 9 | 22 | 10 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 11
+Working Set: 21 | 15 | 9 | 32 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 10
+Working Set: 40 | 8 | 49 | 38 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 9
+Working Set: 32 | 40 | 5 | 28 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 8
+Working Set: 30 | 43 | 5 | 15 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 7
+Working Set: 47 | 11 | 14 | 8 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 6
+Working Set: 13 | 19 | 24 | 35 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 5
+Working Set: 47 | 34 | 49 | 23 | 
+-----------------------------------------
+Process ID: 5
+Requests Done: 20
+Working Set: 5 | 30 | 0 | 0 | 
+-----------------------------------------
+Frames:
+[F1]: 17.15  [F2]: 18.11  [F3]: 18.8  [F4]: 16.28  [F5]: 17.30  [F6]: 18.47  [F7]: 17.43  [F8]: 19.19  [F9]: 19.35  [F10]: 19.13  [F11]: 18.14  [F12]: 20.34  [F13]: 5.30  [F14]: 20.23  [F15]: 19.24  [F16]: 20.49  [F17]: 6.1  [F18]: 20.47  [F20]: 6.6  [F21]: 7.6  [F22]: 5.5  [F24]: 6.28  [F25]: 7.8  [F26]: 8.24  [F27]: 6.45  [F28]: 7.41  [F29]: 8.9  [F30]: 9.39  [F31]: 7.21  [F32]: 8.32  [F33]: 9.4  [F34]: 10.38  [F35]: 8.22  [F36]: 9.19  [F37]: 10.19  [F38]: 11.13  [F39]: 9.1  [F40]: 10.23  [F41]: 11.40  [F42]: 12.15  [F43]: 10.43  [F44]: 11.3  [F45]: 12.16  [F46]: 13.48  [F47]: 11.20  [F48]: 12.35  [F49]: 13.22  [F50]: 14.15  [F51]: 12.28  [F52]: 13.10  [F53]: 14.9  [F54]: 15.49  [F55]: 13.9  [F56]: 14.32  [F57]: 15.38  [F58]: 16.32  [F59]: 14.21  [F60]: 15.40  [F61]: 16.40  [F62]: 17.5  [F63]: 15.8  [F64]: 16.5  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #5 foi terminado
+
+
+================= INSTANTE DE TEMPO: 72 ============== 
+Processo #6 faz requisicao da pagina #9.
+Pagetable do processo #6
+Frame #17: Page #1
+Frame #20: Page #6
+Frame #24: Page #9
+Frame #27: Page #45
+-----------------------------------------
+Processo #7 faz requisicao da pagina #26.
+Pagetable do processo #7
+Frame #21: Page #6
+Frame #25: Page #8
+Frame #31: Page #21
+Frame #28: Page #26
+-----------------------------------------
+Processo #8 faz requisicao da pagina #24.
+Pagetable do processo #8
+Frame #29: Page #9
+Frame #35: Page #22
+Frame #26: Page #24
+Frame #32: Page #32
+-----------------------------------------
+Processo #9 faz requisicao da pagina #21.
+Pagetable do processo #9
+Frame #39: Page #1
+Frame #33: Page #4
+Frame #36: Page #19
+Frame #30: Page #21
+-----------------------------------------
+Processo #10 faz requisicao da pagina #12.
+Pagetable do processo #10
+Frame #40: Page #12
+Frame #37: Page #19
+Frame #34: Page #38
+Frame #43: Page #43
+-----------------------------------------
+Processo #11 faz requisicao da pagina #48.
+Pagetable do processo #11
+Frame #38: Page #13
+Frame #47: Page #20
+Frame #41: Page #40
+Frame #44: Page #48
+-----------------------------------------
+Processo #12 faz requisicao da pagina #30.
+Pagetable do processo #12
+Frame #45: Page #16
+Frame #51: Page #28
+Frame #42: Page #30
+Frame #48: Page #35
+-----------------------------------------
+Processo #13 faz requisicao da pagina #10.
+Pagetable do processo #13
+Frame #55: Page #9
+Frame #52: Page #10
+Frame #49: Page #22
+Frame #46: Page #48
+-----------------------------------------
+Processo #14 faz requisicao da pagina #4.
+Pagetable do processo #14
+Frame #59: Page #4
+Frame #53: Page #9
+Frame #50: Page #15
+Frame #56: Page #32
+-----------------------------------------
+Processo #15 faz requisicao da pagina #36.
+Pagetable do processo #15
+Frame #63: Page #8
+Frame #60: Page #36
+Frame #57: Page #38
+Frame #54: Page #49
+-----------------------------------------
+Processo #16 faz requisicao da pagina #23.
+Pagetable do processo #16
+Frame #64: Page #5
+Frame #58: Page #23
+Frame #4: Page #28
+Frame #61: Page #40
+-----------------------------------------
+Processo #17 faz requisicao da pagina #27.
+Pagetable do processo #17
+Frame #62: Page #5
+Frame #1: Page #15
+Frame #5: Page #27
+Frame #7: Page #43
+-----------------------------------------
+Processo #18 faz requisicao da pagina #35.
+Pagetable do processo #18
+Frame #3: Page #8
+Frame #2: Page #11
+Frame #11: Page #14
+Frame #6: Page #35
+-----------------------------------------
+Processo #19 faz requisicao da pagina #43.
+Pagetable do processo #19
+Frame #8: Page #19
+Frame #15: Page #24
+Frame #9: Page #35
+Frame #10: Page #43
+-----------------------------------------
+Processo #20 faz requisicao da pagina #31.
+Pagetable do processo #20
+Frame #14: Page #23
+Frame #18: Page #31
+Frame #12: Page #34
+Frame #16: Page #49
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 6
+Requests Done: 20
+Working Set: 45 | 6 | 1 | 9 | 
+-----------------------------------------
+Process ID: 7
+Requests Done: 19
+Working Set: 6 | 21 | 8 | 26 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 18
+Working Set: 9 | 32 | 22 | 24 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 17
+Working Set: 1 | 4 | 19 | 21 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 16
+Working Set: 38 | 43 | 19 | 12 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 15
+Working Set: 20 | 13 | 40 | 48 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 14
+Working Set: 16 | 35 | 28 | 30 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 13
+Working Set: 48 | 9 | 22 | 10 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 12
+Working Set: 15 | 9 | 32 | 4 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 11
+Working Set: 8 | 49 | 38 | 36 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 10
+Working Set: 40 | 5 | 28 | 23 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 9
+Working Set: 43 | 5 | 15 | 27 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 8
+Working Set: 11 | 14 | 8 | 35 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 7
+Working Set: 19 | 24 | 35 | 43 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 6
+Working Set: 34 | 49 | 23 | 31 | 
+-----------------------------------------
+Frames:
+[F1]: 17.15  [F2]: 18.11  [F3]: 18.8  [F4]: 16.28  [F5]: 17.27  [F6]: 18.35  [F7]: 17.43  [F8]: 19.19  [F9]: 19.35  [F10]: 19.43  [F11]: 18.14  [F12]: 20.34  [F14]: 20.23  [F15]: 19.24  [F16]: 20.49  [F17]: 6.1  [F18]: 20.31  [F20]: 6.6  [F21]: 7.6  [F24]: 6.9  [F25]: 7.8  [F26]: 8.24  [F27]: 6.45  [F28]: 7.26  [F29]: 8.9  [F30]: 9.21  [F31]: 7.21  [F32]: 8.32  [F33]: 9.4  [F34]: 10.38  [F35]: 8.22  [F36]: 9.19  [F37]: 10.19  [F38]: 11.13  [F39]: 9.1  [F40]: 10.12  [F41]: 11.40  [F42]: 12.30  [F43]: 10.43  [F44]: 11.48  [F45]: 12.16  [F46]: 13.48  [F47]: 11.20  [F48]: 12.35  [F49]: 13.22  [F50]: 14.15  [F51]: 12.28  [F52]: 13.10  [F53]: 14.9  [F54]: 15.49  [F55]: 13.9  [F56]: 14.32  [F57]: 15.38  [F58]: 16.23  [F59]: 14.4  [F60]: 15.36  [F61]: 16.40  [F62]: 17.5  [F63]: 15.8  [F64]: 16.5  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #6 foi terminado
+
+
+================= INSTANTE DE TEMPO: 75 ============== 
+Processo #7 faz requisicao da pagina #37.
+Pagetable do processo #7
+Frame #25: Page #8
+Frame #31: Page #21
+Frame #28: Page #26
+Frame #21: Page #37
+-----------------------------------------
+Processo #8 faz requisicao da pagina #3.
+Pagetable do processo #8
+Frame #29: Page #3
+Frame #35: Page #22
+Frame #26: Page #24
+Frame #32: Page #32
+-----------------------------------------
+Processo #9 faz requisicao da pagina #4.
+Pagetable do processo #9
+Frame #39: Page #1
+Frame #33: Page #4
+Frame #36: Page #19
+Frame #30: Page #21
+-----------------------------------------
+Processo #10 faz requisicao da pagina #7.
+Pagetable do processo #10
+Frame #34: Page #7
+Frame #40: Page #12
+Frame #37: Page #19
+Frame #43: Page #43
+-----------------------------------------
+Processo #11 faz requisicao da pagina #21.
+Pagetable do processo #11
+Frame #38: Page #13
+Frame #47: Page #21
+Frame #41: Page #40
+Frame #44: Page #48
+-----------------------------------------
+Processo #12 faz requisicao da pagina #45.
+Pagetable do processo #12
+Frame #51: Page #28
+Frame #42: Page #30
+Frame #48: Page #35
+Frame #45: Page #45
+-----------------------------------------
+Processo #13 faz requisicao da pagina #34.
+Pagetable do processo #13
+Frame #55: Page #9
+Frame #52: Page #10
+Frame #49: Page #22
+Frame #46: Page #34
+-----------------------------------------
+Processo #14 faz requisicao da pagina #30.
+Pagetable do processo #14
+Frame #59: Page #4
+Frame #53: Page #9
+Frame #50: Page #30
+Frame #56: Page #32
+-----------------------------------------
+Processo #15 faz requisicao da pagina #29.
+Pagetable do processo #15
+Frame #63: Page #29
+Frame #60: Page #36
+Frame #57: Page #38
+Frame #54: Page #49
+-----------------------------------------
+Processo #16 faz requisicao da pagina #23.
+Pagetable do processo #16
+Frame #64: Page #5
+Frame #58: Page #23
+Frame #4: Page #28
+Frame #61: Page #40
+-----------------------------------------
+Processo #17 faz requisicao da pagina #7.
+Pagetable do processo #17
+Frame #62: Page #5
+Frame #7: Page #7
+Frame #1: Page #15
+Frame #5: Page #27
+-----------------------------------------
+Processo #18 faz requisicao da pagina #45.
+Pagetable do processo #18
+Frame #3: Page #8
+Frame #11: Page #14
+Frame #6: Page #35
+Frame #2: Page #45
+-----------------------------------------
+Processo #19 faz requisicao da pagina #30.
+Pagetable do processo #19
+Frame #15: Page #24
+Frame #8: Page #30
+Frame #9: Page #35
+Frame #10: Page #43
+-----------------------------------------
+Processo #20 faz requisicao da pagina #44.
+Pagetable do processo #20
+Frame #14: Page #23
+Frame #18: Page #31
+Frame #12: Page #44
+Frame #16: Page #49
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 7
+Requests Done: 20
+Working Set: 21 | 8 | 26 | 37 | 
+-----------------------------------------
+Process ID: 8
+Requests Done: 19
+Working Set: 32 | 22 | 24 | 3 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 18
+Working Set: 1 | 19 | 21 | 4 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 17
+Working Set: 43 | 19 | 12 | 7 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 16
+Working Set: 13 | 40 | 48 | 21 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 15
+Working Set: 35 | 28 | 30 | 45 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 14
+Working Set: 9 | 22 | 10 | 34 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 13
+Working Set: 9 | 32 | 4 | 30 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 12
+Working Set: 49 | 38 | 36 | 29 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 11
+Working Set: 40 | 5 | 28 | 23 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 10
+Working Set: 5 | 15 | 27 | 7 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 9
+Working Set: 14 | 8 | 35 | 45 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 8
+Working Set: 24 | 35 | 43 | 30 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 7
+Working Set: 49 | 23 | 31 | 44 | 
+-----------------------------------------
+Frames:
+[F1]: 17.15  [F2]: 18.45  [F3]: 18.8  [F4]: 16.28  [F5]: 17.27  [F6]: 18.35  [F7]: 17.7  [F8]: 19.30  [F9]: 19.35  [F10]: 19.43  [F11]: 18.14  [F12]: 20.44  [F14]: 20.23  [F15]: 19.24  [F16]: 20.49  [F18]: 20.31  [F21]: 7.37  [F25]: 7.8  [F26]: 8.24  [F28]: 7.26  [F29]: 8.3  [F30]: 9.21  [F31]: 7.21  [F32]: 8.32  [F33]: 9.4  [F34]: 10.7  [F35]: 8.22  [F36]: 9.19  [F37]: 10.19  [F38]: 11.13  [F39]: 9.1  [F40]: 10.12  [F41]: 11.40  [F42]: 12.30  [F43]: 10.43  [F44]: 11.48  [F45]: 12.45  [F46]: 13.34  [F47]: 11.21  [F48]: 12.35  [F49]: 13.22  [F50]: 14.30  [F51]: 12.28  [F52]: 13.10  [F53]: 14.9  [F54]: 15.49  [F55]: 13.9  [F56]: 14.32  [F57]: 15.38  [F58]: 16.23  [F59]: 14.4  [F60]: 15.36  [F61]: 16.40  [F62]: 17.5  [F63]: 15.29  [F64]: 16.5  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #7 foi terminado
+
+
+================= INSTANTE DE TEMPO: 78 ============== 
+Processo #8 faz requisicao da pagina #17.
+Pagetable do processo #8
+Frame #29: Page #3
+Frame #32: Page #17
+Frame #35: Page #22
+Frame #26: Page #24
+-----------------------------------------
+Processo #9 faz requisicao da pagina #9.
+Pagetable do processo #9
+Frame #33: Page #4
+Frame #39: Page #9
+Frame #36: Page #19
+Frame #30: Page #21
+-----------------------------------------
+Processo #10 faz requisicao da pagina #4.
+Pagetable do processo #10
+Frame #43: Page #4
+Frame #34: Page #7
+Frame #40: Page #12
+Frame #37: Page #19
+-----------------------------------------
+Processo #11 faz requisicao da pagina #42.
+Pagetable do processo #11
+Frame #47: Page #21
+Frame #41: Page #40
+Frame #38: Page #42
+Frame #44: Page #48
+-----------------------------------------
+Processo #12 faz requisicao da pagina #33.
+Pagetable do processo #12
+Frame #51: Page #28
+Frame #42: Page #30
+Frame #48: Page #33
+Frame #45: Page #45
+-----------------------------------------
+Processo #13 faz requisicao da pagina #24.
+Pagetable do processo #13
+Frame #52: Page #10
+Frame #49: Page #22
+Frame #55: Page #24
+Frame #46: Page #34
+-----------------------------------------
+Processo #14 faz requisicao da pagina #5.
+Pagetable do processo #14
+Frame #59: Page #4
+Frame #53: Page #5
+Frame #50: Page #30
+Frame #56: Page #32
+-----------------------------------------
+Processo #15 faz requisicao da pagina #30.
+Pagetable do processo #15
+Frame #63: Page #29
+Frame #54: Page #30
+Frame #60: Page #36
+Frame #57: Page #38
+-----------------------------------------
+Processo #16 faz requisicao da pagina #5.
+Pagetable do processo #16
+Frame #64: Page #5
+Frame #58: Page #23
+Frame #4: Page #28
+Frame #61: Page #40
+-----------------------------------------
+Processo #17 faz requisicao da pagina #15.
+Pagetable do processo #17
+Frame #62: Page #5
+Frame #7: Page #7
+Frame #1: Page #15
+Frame #5: Page #27
+-----------------------------------------
+Processo #18 faz requisicao da pagina #33.
+Pagetable do processo #18
+Frame #3: Page #8
+Frame #11: Page #33
+Frame #6: Page #35
+Frame #2: Page #45
+-----------------------------------------
+Processo #19 faz requisicao da pagina #41.
+Pagetable do processo #19
+Frame #8: Page #30
+Frame #9: Page #35
+Frame #15: Page #41
+Frame #10: Page #43
+-----------------------------------------
+Processo #20 faz requisicao da pagina #39.
+Pagetable do processo #20
+Frame #14: Page #23
+Frame #18: Page #31
+Frame #16: Page #39
+Frame #12: Page #44
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 8
+Requests Done: 20
+Working Set: 22 | 24 | 3 | 17 | 
+-----------------------------------------
+Process ID: 9
+Requests Done: 19
+Working Set: 19 | 21 | 4 | 9 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 18
+Working Set: 19 | 12 | 7 | 4 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 17
+Working Set: 40 | 48 | 21 | 42 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 16
+Working Set: 28 | 30 | 45 | 33 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 15
+Working Set: 22 | 10 | 34 | 24 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 14
+Working Set: 32 | 4 | 30 | 5 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 13
+Working Set: 38 | 36 | 29 | 30 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 12
+Working Set: 40 | 28 | 23 | 5 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 11
+Working Set: 5 | 27 | 7 | 15 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 10
+Working Set: 8 | 35 | 45 | 33 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 9
+Working Set: 35 | 43 | 30 | 41 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 8
+Working Set: 23 | 31 | 44 | 39 | 
+-----------------------------------------
+Frames:
+[F1]: 17.15  [F2]: 18.45  [F3]: 18.8  [F4]: 16.28  [F5]: 17.27  [F6]: 18.35  [F7]: 17.7  [F8]: 19.30  [F9]: 19.35  [F10]: 19.43  [F11]: 18.33  [F12]: 20.44  [F14]: 20.23  [F15]: 19.41  [F16]: 20.39  [F18]: 20.31  [F26]: 8.24  [F29]: 8.3  [F30]: 9.21  [F32]: 8.17  [F33]: 9.4  [F34]: 10.7  [F35]: 8.22  [F36]: 9.19  [F37]: 10.19  [F38]: 11.42  [F39]: 9.9  [F40]: 10.12  [F41]: 11.40  [F42]: 12.30  [F43]: 10.4  [F44]: 11.48  [F45]: 12.45  [F46]: 13.34  [F47]: 11.21  [F48]: 12.33  [F49]: 13.22  [F50]: 14.30  [F51]: 12.28  [F52]: 13.10  [F53]: 14.5  [F54]: 15.30  [F55]: 13.24  [F56]: 14.32  [F57]: 15.38  [F58]: 16.23  [F59]: 14.4  [F60]: 15.36  [F61]: 16.40  [F62]: 17.5  [F63]: 15.29  [F64]: 16.5  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #8 foi terminado
+
+
+================= INSTANTE DE TEMPO: 81 ============== 
+Processo #9 faz requisicao da pagina #10.
+Pagetable do processo #9
+Frame #33: Page #4
+Frame #39: Page #9
+Frame #36: Page #10
+Frame #30: Page #21
+-----------------------------------------
+Processo #10 faz requisicao da pagina #27.
+Pagetable do processo #10
+Frame #43: Page #4
+Frame #34: Page #7
+Frame #40: Page #12
+Frame #37: Page #27
+-----------------------------------------
+Processo #11 faz requisicao da pagina #32.
+Pagetable do processo #11
+Frame #47: Page #21
+Frame #41: Page #32
+Frame #38: Page #42
+Frame #44: Page #48
+-----------------------------------------
+Processo #12 faz requisicao da pagina #42.
+Pagetable do processo #12
+Frame #42: Page #30
+Frame #48: Page #33
+Frame #51: Page #42
+Frame #45: Page #45
+-----------------------------------------
+Processo #13 faz requisicao da pagina #15.
+Pagetable do processo #13
+Frame #52: Page #10
+Frame #49: Page #15
+Frame #55: Page #24
+Frame #46: Page #34
+-----------------------------------------
+Processo #14 faz requisicao da pagina #34.
+Pagetable do processo #14
+Frame #59: Page #4
+Frame #53: Page #5
+Frame #50: Page #30
+Frame #56: Page #34
+-----------------------------------------
+Processo #15 faz requisicao da pagina #48.
+Pagetable do processo #15
+Frame #63: Page #29
+Frame #54: Page #30
+Frame #60: Page #36
+Frame #57: Page #48
+-----------------------------------------
+Processo #16 faz requisicao da pagina #24.
+Pagetable do processo #16
+Frame #64: Page #5
+Frame #58: Page #23
+Frame #61: Page #24
+Frame #4: Page #28
+-----------------------------------------
+Processo #17 faz requisicao da pagina #4.
+Pagetable do processo #17
+Frame #62: Page #4
+Frame #7: Page #7
+Frame #1: Page #15
+Frame #5: Page #27
+-----------------------------------------
+Processo #18 faz requisicao da pagina #42.
+Pagetable do processo #18
+Frame #11: Page #33
+Frame #6: Page #35
+Frame #3: Page #42
+Frame #2: Page #45
+-----------------------------------------
+Processo #19 faz requisicao da pagina #7.
+Pagetable do processo #19
+Frame #9: Page #7
+Frame #8: Page #30
+Frame #15: Page #41
+Frame #10: Page #43
+-----------------------------------------
+Processo #20 faz requisicao da pagina #35.
+Pagetable do processo #20
+Frame #18: Page #31
+Frame #14: Page #35
+Frame #16: Page #39
+Frame #12: Page #44
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 9
+Requests Done: 20
+Working Set: 21 | 4 | 9 | 10 | 
+-----------------------------------------
+Process ID: 10
+Requests Done: 19
+Working Set: 12 | 7 | 4 | 27 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 18
+Working Set: 48 | 21 | 42 | 32 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 17
+Working Set: 30 | 45 | 33 | 42 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 16
+Working Set: 10 | 34 | 24 | 15 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 15
+Working Set: 4 | 30 | 5 | 34 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 14
+Working Set: 36 | 29 | 30 | 48 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 13
+Working Set: 28 | 23 | 5 | 24 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 12
+Working Set: 27 | 7 | 15 | 4 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 11
+Working Set: 35 | 45 | 33 | 42 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 10
+Working Set: 43 | 30 | 41 | 7 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 9
+Working Set: 31 | 44 | 39 | 35 | 
+-----------------------------------------
+Frames:
+[F1]: 17.15  [F2]: 18.45  [F3]: 18.42  [F4]: 16.28  [F5]: 17.27  [F6]: 18.35  [F7]: 17.7  [F8]: 19.30  [F9]: 19.7  [F10]: 19.43  [F11]: 18.33  [F12]: 20.44  [F14]: 20.35  [F15]: 19.41  [F16]: 20.39  [F18]: 20.31  [F30]: 9.21  [F33]: 9.4  [F34]: 10.7  [F36]: 9.10  [F37]: 10.27  [F38]: 11.42  [F39]: 9.9  [F40]: 10.12  [F41]: 11.32  [F42]: 12.30  [F43]: 10.4  [F44]: 11.48  [F45]: 12.45  [F46]: 13.34  [F47]: 11.21  [F48]: 12.33  [F49]: 13.15  [F50]: 14.30  [F51]: 12.42  [F52]: 13.10  [F53]: 14.5  [F54]: 15.30  [F55]: 13.24  [F56]: 14.34  [F57]: 15.48  [F58]: 16.23  [F59]: 14.4  [F60]: 15.36  [F61]: 16.24  [F62]: 17.4  [F63]: 15.29  [F64]: 16.5  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #9 foi terminado
+
+
+================= INSTANTE DE TEMPO: 84 ============== 
+Processo #10 faz requisicao da pagina #20.
+Pagetable do processo #10
+Frame #43: Page #4
+Frame #34: Page #7
+Frame #40: Page #20
+Frame #37: Page #27
+-----------------------------------------
+Processo #11 faz requisicao da pagina #30.
+Pagetable do processo #11
+Frame #47: Page #21
+Frame #44: Page #30
+Frame #41: Page #32
+Frame #38: Page #42
+-----------------------------------------
+Processo #12 faz requisicao da pagina #41.
+Pagetable do processo #12
+Frame #48: Page #33
+Frame #42: Page #41
+Frame #51: Page #42
+Frame #45: Page #45
+-----------------------------------------
+Processo #13 faz requisicao da pagina #15.
+Pagetable do processo #13
+Frame #52: Page #10
+Frame #49: Page #15
+Frame #55: Page #24
+Frame #46: Page #34
+-----------------------------------------
+Processo #14 faz requisicao da pagina #9.
+Pagetable do processo #14
+Frame #53: Page #5
+Frame #59: Page #9
+Frame #50: Page #30
+Frame #56: Page #34
+-----------------------------------------
+Processo #15 faz requisicao da pagina #36.
+Pagetable do processo #15
+Frame #63: Page #29
+Frame #54: Page #30
+Frame #60: Page #36
+Frame #57: Page #48
+-----------------------------------------
+Processo #16 faz requisicao da pagina #33.
+Pagetable do processo #16
+Frame #64: Page #5
+Frame #58: Page #23
+Frame #61: Page #24
+Frame #4: Page #33
+-----------------------------------------
+Processo #17 faz requisicao da pagina #20.
+Pagetable do processo #17
+Frame #62: Page #4
+Frame #7: Page #7
+Frame #1: Page #15
+Frame #5: Page #20
+-----------------------------------------
+Processo #18 faz requisicao da pagina #39.
+Pagetable do processo #18
+Frame #11: Page #33
+Frame #6: Page #39
+Frame #3: Page #42
+Frame #2: Page #45
+-----------------------------------------
+Processo #19 faz requisicao da pagina #25.
+Pagetable do processo #19
+Frame #9: Page #7
+Frame #10: Page #25
+Frame #8: Page #30
+Frame #15: Page #41
+-----------------------------------------
+Processo #20 faz requisicao da pagina #4.
+Pagetable do processo #20
+Frame #18: Page #4
+Frame #14: Page #35
+Frame #16: Page #39
+Frame #12: Page #44
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 10
+Requests Done: 20
+Working Set: 7 | 4 | 27 | 20 | 
+-----------------------------------------
+Process ID: 11
+Requests Done: 19
+Working Set: 21 | 42 | 32 | 30 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 18
+Working Set: 45 | 33 | 42 | 41 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 17
+Working Set: 10 | 34 | 24 | 15 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 16
+Working Set: 30 | 5 | 34 | 9 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 15
+Working Set: 29 | 30 | 48 | 36 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 14
+Working Set: 23 | 5 | 24 | 33 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 13
+Working Set: 7 | 15 | 4 | 20 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 12
+Working Set: 45 | 33 | 42 | 39 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 11
+Working Set: 30 | 41 | 7 | 25 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 10
+Working Set: 44 | 39 | 35 | 4 | 
+-----------------------------------------
+Frames:
+[F1]: 17.15  [F2]: 18.45  [F3]: 18.42  [F4]: 16.33  [F5]: 17.20  [F6]: 18.39  [F7]: 17.7  [F8]: 19.30  [F9]: 19.7  [F10]: 19.25  [F11]: 18.33  [F12]: 20.44  [F14]: 20.35  [F15]: 19.41  [F16]: 20.39  [F18]: 20.4  [F34]: 10.7  [F37]: 10.27  [F38]: 11.42  [F40]: 10.20  [F41]: 11.32  [F42]: 12.41  [F43]: 10.4  [F44]: 11.30  [F45]: 12.45  [F46]: 13.34  [F47]: 11.21  [F48]: 12.33  [F49]: 13.15  [F50]: 14.30  [F51]: 12.42  [F52]: 13.10  [F53]: 14.5  [F54]: 15.30  [F55]: 13.24  [F56]: 14.34  [F57]: 15.48  [F58]: 16.23  [F59]: 14.9  [F60]: 15.36  [F61]: 16.24  [F62]: 17.4  [F63]: 15.29  [F64]: 16.5  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #10 foi terminado
+
+
+================= INSTANTE DE TEMPO: 87 ============== 
+Processo #11 faz requisicao da pagina #15.
+Pagetable do processo #11
+Frame #47: Page #15
+Frame #44: Page #30
+Frame #41: Page #32
+Frame #38: Page #42
+-----------------------------------------
+Processo #12 faz requisicao da pagina #31.
+Pagetable do processo #12
+Frame #45: Page #31
+Frame #48: Page #33
+Frame #42: Page #41
+Frame #51: Page #42
+-----------------------------------------
+Processo #13 faz requisicao da pagina #35.
+Pagetable do processo #13
+Frame #49: Page #15
+Frame #55: Page #24
+Frame #46: Page #34
+Frame #52: Page #35
+-----------------------------------------
+Processo #14 faz requisicao da pagina #19.
+Pagetable do processo #14
+Frame #53: Page #5
+Frame #59: Page #9
+Frame #50: Page #19
+Frame #56: Page #34
+-----------------------------------------
+Processo #15 faz requisicao da pagina #45.
+Pagetable do processo #15
+Frame #54: Page #30
+Frame #60: Page #36
+Frame #63: Page #45
+Frame #57: Page #48
+-----------------------------------------
+Processo #16 faz requisicao da pagina #19.
+Pagetable do processo #16
+Frame #64: Page #5
+Frame #58: Page #19
+Frame #61: Page #24
+Frame #4: Page #33
+-----------------------------------------
+Processo #17 faz requisicao da pagina #11.
+Pagetable do processo #17
+Frame #62: Page #4
+Frame #7: Page #11
+Frame #1: Page #15
+Frame #5: Page #20
+-----------------------------------------
+Processo #18 faz requisicao da pagina #34.
+Pagetable do processo #18
+Frame #11: Page #33
+Frame #2: Page #34
+Frame #6: Page #39
+Frame #3: Page #42
+-----------------------------------------
+Processo #19 faz requisicao da pagina #30.
+Pagetable do processo #19
+Frame #9: Page #7
+Frame #10: Page #25
+Frame #8: Page #30
+Frame #15: Page #41
+-----------------------------------------
+Processo #20 faz requisicao da pagina #39.
+Pagetable do processo #20
+Frame #18: Page #4
+Frame #14: Page #35
+Frame #16: Page #39
+Frame #12: Page #44
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 11
+Requests Done: 20
+Working Set: 42 | 32 | 30 | 15 | 
+-----------------------------------------
+Process ID: 12
+Requests Done: 19
+Working Set: 33 | 42 | 41 | 31 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 18
+Working Set: 34 | 24 | 15 | 35 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 17
+Working Set: 5 | 34 | 9 | 19 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 16
+Working Set: 30 | 48 | 36 | 45 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 15
+Working Set: 5 | 24 | 33 | 19 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 14
+Working Set: 15 | 4 | 20 | 11 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 13
+Working Set: 33 | 42 | 39 | 34 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 12
+Working Set: 41 | 7 | 25 | 30 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 11
+Working Set: 44 | 35 | 4 | 39 | 
+-----------------------------------------
+Frames:
+[F1]: 17.15  [F2]: 18.34  [F3]: 18.42  [F4]: 16.33  [F5]: 17.20  [F6]: 18.39  [F7]: 17.11  [F8]: 19.30  [F9]: 19.7  [F10]: 19.25  [F11]: 18.33  [F12]: 20.44  [F14]: 20.35  [F15]: 19.41  [F16]: 20.39  [F18]: 20.4  [F38]: 11.42  [F41]: 11.32  [F42]: 12.41  [F44]: 11.30  [F45]: 12.31  [F46]: 13.34  [F47]: 11.15  [F48]: 12.33  [F49]: 13.15  [F50]: 14.19  [F51]: 12.42  [F52]: 13.35  [F53]: 14.5  [F54]: 15.30  [F55]: 13.24  [F56]: 14.34  [F57]: 15.48  [F58]: 16.19  [F59]: 14.9  [F60]: 15.36  [F61]: 16.24  [F62]: 17.4  [F63]: 15.45  [F64]: 16.5  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #11 foi terminado
+
+
+================= INSTANTE DE TEMPO: 90 ============== 
+Processo #12 faz requisicao da pagina #17.
+Pagetable do processo #12
+Frame #48: Page #17
+Frame #45: Page #31
+Frame #42: Page #41
+Frame #51: Page #42
+-----------------------------------------
+Processo #13 faz requisicao da pagina #22.
+Pagetable do processo #13
+Frame #49: Page #15
+Frame #46: Page #22
+Frame #55: Page #24
+Frame #52: Page #35
+-----------------------------------------
+Processo #14 faz requisicao da pagina #4.
+Pagetable do processo #14
+Frame #53: Page #4
+Frame #59: Page #9
+Frame #50: Page #19
+Frame #56: Page #34
+-----------------------------------------
+Processo #15 faz requisicao da pagina #2.
+Pagetable do processo #15
+Frame #54: Page #2
+Frame #60: Page #36
+Frame #63: Page #45
+Frame #57: Page #48
+-----------------------------------------
+Processo #16 faz requisicao da pagina #19.
+Pagetable do processo #16
+Frame #64: Page #5
+Frame #58: Page #19
+Frame #61: Page #24
+Frame #4: Page #33
+-----------------------------------------
+Processo #17 faz requisicao da pagina #27.
+Pagetable do processo #17
+Frame #62: Page #4
+Frame #7: Page #11
+Frame #5: Page #20
+Frame #1: Page #27
+-----------------------------------------
+Processo #18 faz requisicao da pagina #5.
+Pagetable do processo #18
+Frame #11: Page #5
+Frame #2: Page #34
+Frame #6: Page #39
+Frame #3: Page #42
+-----------------------------------------
+Processo #19 faz requisicao da pagina #10.
+Pagetable do processo #19
+Frame #9: Page #7
+Frame #15: Page #10
+Frame #10: Page #25
+Frame #8: Page #30
+-----------------------------------------
+Processo #20 faz requisicao da pagina #35.
+Pagetable do processo #20
+Frame #18: Page #4
+Frame #14: Page #35
+Frame #16: Page #39
+Frame #12: Page #44
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 12
+Requests Done: 20
+Working Set: 42 | 41 | 31 | 17 | 
+-----------------------------------------
+Process ID: 13
+Requests Done: 19
+Working Set: 24 | 15 | 35 | 22 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 18
+Working Set: 34 | 9 | 19 | 4 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 17
+Working Set: 48 | 36 | 45 | 2 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 16
+Working Set: 5 | 24 | 33 | 19 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 15
+Working Set: 4 | 20 | 11 | 27 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 14
+Working Set: 42 | 39 | 34 | 5 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 13
+Working Set: 7 | 25 | 30 | 10 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 12
+Working Set: 44 | 4 | 39 | 35 | 
+-----------------------------------------
+Frames:
+[F1]: 17.27  [F2]: 18.34  [F3]: 18.42  [F4]: 16.33  [F5]: 17.20  [F6]: 18.39  [F7]: 17.11  [F8]: 19.30  [F9]: 19.7  [F10]: 19.25  [F11]: 18.5  [F12]: 20.44  [F14]: 20.35  [F15]: 19.10  [F16]: 20.39  [F18]: 20.4  [F42]: 12.41  [F45]: 12.31  [F46]: 13.22  [F48]: 12.17  [F49]: 13.15  [F50]: 14.19  [F51]: 12.42  [F52]: 13.35  [F53]: 14.4  [F54]: 15.2  [F55]: 13.24  [F56]: 14.34  [F57]: 15.48  [F58]: 16.19  [F59]: 14.9  [F60]: 15.36  [F61]: 16.24  [F62]: 17.4  [F63]: 15.45  [F64]: 16.5  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #12 foi terminado
+
+
+================= INSTANTE DE TEMPO: 93 ============== 
+Processo #13 faz requisicao da pagina #41.
+Pagetable do processo #13
+Frame #49: Page #15
+Frame #46: Page #22
+Frame #52: Page #35
+Frame #55: Page #41
+-----------------------------------------
+Processo #14 faz requisicao da pagina #32.
+Pagetable do processo #14
+Frame #53: Page #4
+Frame #59: Page #9
+Frame #50: Page #19
+Frame #56: Page #32
+-----------------------------------------
+Processo #15 faz requisicao da pagina #14.
+Pagetable do processo #15
+Frame #54: Page #2
+Frame #57: Page #14
+Frame #60: Page #36
+Frame #63: Page #45
+-----------------------------------------
+Processo #16 faz requisicao da pagina #33.
+Pagetable do processo #16
+Frame #64: Page #5
+Frame #58: Page #19
+Frame #61: Page #24
+Frame #4: Page #33
+-----------------------------------------
+Processo #17 faz requisicao da pagina #48.
+Pagetable do processo #17
+Frame #7: Page #11
+Frame #5: Page #20
+Frame #1: Page #27
+Frame #62: Page #48
+-----------------------------------------
+Processo #18 faz requisicao da pagina #25.
+Pagetable do processo #18
+Frame #11: Page #5
+Frame #3: Page #25
+Frame #2: Page #34
+Frame #6: Page #39
+-----------------------------------------
+Processo #19 faz requisicao da pagina #19.
+Pagetable do processo #19
+Frame #15: Page #10
+Frame #9: Page #19
+Frame #10: Page #25
+Frame #8: Page #30
+-----------------------------------------
+Processo #20 faz requisicao da pagina #30.
+Pagetable do processo #20
+Frame #18: Page #4
+Frame #12: Page #30
+Frame #14: Page #35
+Frame #16: Page #39
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 13
+Requests Done: 20
+Working Set: 15 | 35 | 22 | 41 | 
+-----------------------------------------
+Process ID: 14
+Requests Done: 19
+Working Set: 9 | 19 | 4 | 32 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 18
+Working Set: 36 | 45 | 2 | 14 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 17
+Working Set: 5 | 24 | 19 | 33 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 16
+Working Set: 20 | 11 | 27 | 48 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 15
+Working Set: 39 | 34 | 5 | 25 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 14
+Working Set: 25 | 30 | 10 | 19 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 13
+Working Set: 4 | 39 | 35 | 30 | 
+-----------------------------------------
+Frames:
+[F1]: 17.27  [F2]: 18.34  [F3]: 18.25  [F4]: 16.33  [F5]: 17.20  [F6]: 18.39  [F7]: 17.11  [F8]: 19.30  [F9]: 19.19  [F10]: 19.25  [F11]: 18.5  [F12]: 20.30  [F14]: 20.35  [F15]: 19.10  [F16]: 20.39  [F18]: 20.4  [F46]: 13.22  [F49]: 13.15  [F50]: 14.19  [F52]: 13.35  [F53]: 14.4  [F54]: 15.2  [F55]: 13.41  [F56]: 14.32  [F57]: 15.14  [F58]: 16.19  [F59]: 14.9  [F60]: 15.36  [F61]: 16.24  [F62]: 17.48  [F63]: 15.45  [F64]: 16.5  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #13 foi terminado
+
+
+================= INSTANTE DE TEMPO: 96 ============== 
+Processo #14 faz requisicao da pagina #46.
+Pagetable do processo #14
+Frame #53: Page #4
+Frame #50: Page #19
+Frame #56: Page #32
+Frame #59: Page #46
+-----------------------------------------
+Processo #15 faz requisicao da pagina #9.
+Pagetable do processo #15
+Frame #54: Page #2
+Frame #60: Page #9
+Frame #57: Page #14
+Frame #63: Page #45
+-----------------------------------------
+Processo #16 faz requisicao da pagina #6.
+Pagetable do processo #16
+Frame #64: Page #6
+Frame #58: Page #19
+Frame #61: Page #24
+Frame #4: Page #33
+-----------------------------------------
+Processo #17 faz requisicao da pagina #49.
+Pagetable do processo #17
+Frame #7: Page #11
+Frame #1: Page #27
+Frame #62: Page #48
+Frame #5: Page #49
+-----------------------------------------
+Processo #18 faz requisicao da pagina #23.
+Pagetable do processo #18
+Frame #11: Page #5
+Frame #6: Page #23
+Frame #3: Page #25
+Frame #2: Page #34
+-----------------------------------------
+Processo #19 faz requisicao da pagina #37.
+Pagetable do processo #19
+Frame #15: Page #10
+Frame #9: Page #19
+Frame #8: Page #30
+Frame #10: Page #37
+-----------------------------------------
+Processo #20 faz requisicao da pagina #33.
+Pagetable do processo #20
+Frame #12: Page #30
+Frame #18: Page #33
+Frame #14: Page #35
+Frame #16: Page #39
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 14
+Requests Done: 20
+Working Set: 19 | 4 | 32 | 46 | 
+-----------------------------------------
+Process ID: 15
+Requests Done: 19
+Working Set: 45 | 2 | 14 | 9 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 18
+Working Set: 24 | 19 | 33 | 6 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 17
+Working Set: 11 | 27 | 48 | 49 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 16
+Working Set: 34 | 5 | 25 | 23 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 15
+Working Set: 30 | 10 | 19 | 37 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 14
+Working Set: 39 | 35 | 30 | 33 | 
+-----------------------------------------
+Frames:
+[F1]: 17.27  [F2]: 18.34  [F3]: 18.25  [F4]: 16.33  [F5]: 17.49  [F6]: 18.23  [F7]: 17.11  [F8]: 19.30  [F9]: 19.19  [F10]: 19.37  [F11]: 18.5  [F12]: 20.30  [F14]: 20.35  [F15]: 19.10  [F16]: 20.39  [F18]: 20.33  [F50]: 14.19  [F53]: 14.4  [F54]: 15.2  [F56]: 14.32  [F57]: 15.14  [F58]: 16.19  [F59]: 14.46  [F60]: 15.9  [F61]: 16.24  [F62]: 17.48  [F63]: 15.45  [F64]: 16.6  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #14 foi terminado
+
+
+================= INSTANTE DE TEMPO: 99 ============== 
+Processo #15 faz requisicao da pagina #44.
+Pagetable do processo #15
+Frame #54: Page #2
+Frame #60: Page #9
+Frame #57: Page #14
+Frame #63: Page #44
+-----------------------------------------
+Processo #16 faz requisicao da pagina #33.
+Pagetable do processo #16
+Frame #64: Page #6
+Frame #58: Page #19
+Frame #61: Page #24
+Frame #4: Page #33
+-----------------------------------------
+Processo #17 faz requisicao da pagina #1.
+Pagetable do processo #17
+Frame #7: Page #1
+Frame #1: Page #27
+Frame #62: Page #48
+Frame #5: Page #49
+-----------------------------------------
+Processo #18 faz requisicao da pagina #4.
+Pagetable do processo #18
+Frame #2: Page #4
+Frame #11: Page #5
+Frame #6: Page #23
+Frame #3: Page #25
+-----------------------------------------
+Processo #19 faz requisicao da pagina #18.
+Pagetable do processo #19
+Frame #15: Page #10
+Frame #8: Page #18
+Frame #9: Page #19
+Frame #10: Page #37
+-----------------------------------------
+Processo #20 faz requisicao da pagina #31.
+Pagetable do processo #20
+Frame #12: Page #30
+Frame #16: Page #31
+Frame #18: Page #33
+Frame #14: Page #35
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 15
+Requests Done: 20
+Working Set: 2 | 14 | 9 | 44 | 
+-----------------------------------------
+Process ID: 16
+Requests Done: 19
+Working Set: 24 | 19 | 6 | 33 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 18
+Working Set: 27 | 48 | 49 | 1 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 17
+Working Set: 5 | 25 | 23 | 4 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 16
+Working Set: 10 | 19 | 37 | 18 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 15
+Working Set: 35 | 30 | 33 | 31 | 
+-----------------------------------------
+Frames:
+[F1]: 17.27  [F2]: 18.4  [F3]: 18.25  [F4]: 16.33  [F5]: 17.49  [F6]: 18.23  [F7]: 17.1  [F8]: 19.18  [F9]: 19.19  [F10]: 19.37  [F11]: 18.5  [F12]: 20.30  [F14]: 20.35  [F15]: 19.10  [F16]: 20.31  [F18]: 20.33  [F54]: 15.2  [F57]: 15.14  [F58]: 16.19  [F60]: 15.9  [F61]: 16.24  [F62]: 17.48  [F63]: 15.44  [F64]: 16.6  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #15 foi terminado
+
+
+================= INSTANTE DE TEMPO: 102 ============== 
+Processo #16 faz requisicao da pagina #43.
+Pagetable do processo #16
+Frame #64: Page #6
+Frame #58: Page #19
+Frame #4: Page #33
+Frame #61: Page #43
+-----------------------------------------
+Processo #17 faz requisicao da pagina #34.
+Pagetable do processo #17
+Frame #7: Page #1
+Frame #1: Page #34
+Frame #62: Page #48
+Frame #5: Page #49
+-----------------------------------------
+Processo #18 faz requisicao da pagina #4.
+Pagetable do processo #18
+Frame #2: Page #4
+Frame #11: Page #5
+Frame #6: Page #23
+Frame #3: Page #25
+-----------------------------------------
+Processo #19 faz requisicao da pagina #48.
+Pagetable do processo #19
+Frame #8: Page #18
+Frame #9: Page #19
+Frame #10: Page #37
+Frame #15: Page #48
+-----------------------------------------
+Processo #20 faz requisicao da pagina #35.
+Pagetable do processo #20
+Frame #12: Page #30
+Frame #16: Page #31
+Frame #18: Page #33
+Frame #14: Page #35
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 16
+Requests Done: 20
+Working Set: 19 | 6 | 33 | 43 | 
+-----------------------------------------
+Process ID: 17
+Requests Done: 19
+Working Set: 48 | 49 | 1 | 34 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 18
+Working Set: 5 | 25 | 23 | 4 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 17
+Working Set: 19 | 37 | 18 | 48 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 16
+Working Set: 30 | 33 | 31 | 35 | 
+-----------------------------------------
+Frames:
+[F1]: 17.34  [F2]: 18.4  [F3]: 18.25  [F4]: 16.33  [F5]: 17.49  [F6]: 18.23  [F7]: 17.1  [F8]: 19.18  [F9]: 19.19  [F10]: 19.37  [F11]: 18.5  [F12]: 20.30  [F14]: 20.35  [F15]: 19.48  [F16]: 20.31  [F18]: 20.33  [F58]: 16.19  [F61]: 16.43  [F62]: 17.48  [F64]: 16.6  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #16 foi terminado
+
+
+================= INSTANTE DE TEMPO: 105 ============== 
+Processo #17 faz requisicao da pagina #22.
+Pagetable do processo #17
+Frame #7: Page #1
+Frame #62: Page #22
+Frame #1: Page #34
+Frame #5: Page #49
+-----------------------------------------
+Processo #18 faz requisicao da pagina #24.
+Pagetable do processo #18
+Frame #2: Page #4
+Frame #6: Page #23
+Frame #11: Page #24
+Frame #3: Page #25
+-----------------------------------------
+Processo #19 faz requisicao da pagina #41.
+Pagetable do processo #19
+Frame #8: Page #18
+Frame #10: Page #37
+Frame #9: Page #41
+Frame #15: Page #48
+-----------------------------------------
+Processo #20 faz requisicao da pagina #33.
+Pagetable do processo #20
+Frame #12: Page #30
+Frame #16: Page #31
+Frame #18: Page #33
+Frame #14: Page #35
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 17
+Requests Done: 20
+Working Set: 49 | 1 | 34 | 22 | 
+-----------------------------------------
+Process ID: 18
+Requests Done: 19
+Working Set: 25 | 23 | 4 | 24 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 18
+Working Set: 37 | 18 | 48 | 41 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 17
+Working Set: 30 | 31 | 35 | 33 | 
+-----------------------------------------
+Frames:
+[F1]: 17.34  [F2]: 18.4  [F3]: 18.25  [F5]: 17.49  [F6]: 18.23  [F7]: 17.1  [F8]: 19.18  [F9]: 19.41  [F10]: 19.37  [F11]: 18.24  [F12]: 20.30  [F14]: 20.35  [F15]: 19.48  [F16]: 20.31  [F18]: 20.33  [F62]: 17.22  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #17 foi terminado
+
+
+================= INSTANTE DE TEMPO: 108 ============== 
+Processo #18 faz requisicao da pagina #8.
+Pagetable do processo #18
+Frame #2: Page #4
+Frame #3: Page #8
+Frame #6: Page #23
+Frame #11: Page #24
+-----------------------------------------
+Processo #19 faz requisicao da pagina #33.
+Pagetable do processo #19
+Frame #8: Page #18
+Frame #10: Page #33
+Frame #9: Page #41
+Frame #15: Page #48
+-----------------------------------------
+Processo #20 faz requisicao da pagina #16.
+Pagetable do processo #20
+Frame #12: Page #16
+Frame #16: Page #31
+Frame #18: Page #33
+Frame #14: Page #35
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 18
+Requests Done: 20
+Working Set: 23 | 4 | 24 | 8 | 
+-----------------------------------------
+Process ID: 19
+Requests Done: 19
+Working Set: 18 | 48 | 41 | 33 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 18
+Working Set: 31 | 35 | 33 | 16 | 
+-----------------------------------------
+Frames:
+[F2]: 18.4  [F3]: 18.8  [F6]: 18.23  [F8]: 19.18  [F9]: 19.41  [F10]: 19.33  [F11]: 18.24  [F12]: 20.16  [F14]: 20.35  [F15]: 19.48  [F16]: 20.31  [F18]: 20.33  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #18 foi terminado
+
+
+================= INSTANTE DE TEMPO: 111 ============== 
+Processo #19 faz requisicao da pagina #24.
+Pagetable do processo #19
+Frame #8: Page #24
+Frame #10: Page #33
+Frame #9: Page #41
+Frame #15: Page #48
+-----------------------------------------
+Processo #20 faz requisicao da pagina #16.
+Pagetable do processo #20
+Frame #12: Page #16
+Frame #16: Page #31
+Frame #18: Page #33
+Frame #14: Page #35
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 19
+Requests Done: 20
+Working Set: 48 | 41 | 33 | 24 | 
+-----------------------------------------
+Process ID: 20
+Requests Done: 19
+Working Set: 31 | 35 | 33 | 16 | 
+-----------------------------------------
+Frames:
+[F8]: 19.24  [F9]: 19.41  [F10]: 19.33  [F12]: 20.16  [F14]: 20.35  [F15]: 19.48  [F16]: 20.31  [F18]: 20.33  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #19 foi terminado
+
+
+================= INSTANTE DE TEMPO: 114 ============== 
+Processo #20 faz requisicao da pagina #15.
+Pagetable do processo #20
+Frame #16: Page #15
+Frame #12: Page #16
+Frame #18: Page #33
+Frame #14: Page #35
+-----------------------------------------
+
+Processos ocupando ao menos uma frame:
+Process ID: 20
+Requests Done: 20
+Working Set: 35 | 33 | 16 | 15 | 
+-----------------------------------------
+Frames:
+[F12]: 20.16  [F14]: 20.35  [F16]: 20.15  [F18]: 20.33  
+-----------------------------------------
+Processos na memoria swap:
+
+Processo #20 foi terminado
